@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/quit.png</file>
+    <file>icons/two.png</file>
+    <file>icons/one .png</file>
+    <file>icons/vc.png</file>
+    <file>icons/minus.png</file>
+    <file>icons/close.png</file>
+  </qresource>
+  <qresource prefix="images">
+    <file>images/title.png</file>
+    <file>images/back1.png</file>
+    <file>images/back.png</file>
+    <file>images/backdrop.png</file>
+  </qresource>
+</RCC>
