@@ -3,7 +3,7 @@ from predict import yuce
 import threading
 import time
 class mian():
-    # url = "rtsp://admin:a12345678@169.254.26.101/Streaming/Channels/101"
+    #url = "rtsp://admin:a12345678@169.254.26.101/Streaming/Channels/101"
     cap = cv2.VideoCapture(0)
     ret, frame = cap.read()
     c = 0
