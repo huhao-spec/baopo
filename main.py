@@ -1,5 +1,7 @@
+import time
+
 import cv2
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import QTimer, QThread, pyqtSignal
 from tools.predict import yuce
 from login import *
 from interfaceui import *
@@ -33,6 +35,7 @@ class CameraWindow(QMainWindow):
         # 启动计时器
         timer.start()
 
+
         #模拟
         crystal = "大量析晶"
         temperature = '78.98'
@@ -57,22 +60,34 @@ class CameraWindow(QMainWindow):
         self.ui.pushButton_return.clicked.connect(self.goreturn)
 
         self.show()
+
     def update_frame(self):
-        url = "D:\BaiduNetdiskDownload/1.mp4"
-        self.camera = cv2.VideoCapture(url)
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.update_img)
-        self.timer.start()
+        self.camera = cv2.VideoCapture(0)
+        self.timer1 = QTimer(self)
+        self.c = 0
+        self.timer1.timeout.connect(self.update_img)
+        self.timer1.start()
+
     def update_img(self):
         ret, frame = self.camera.read()  # 读取摄像头帧
+        self.c +=1
         if ret:
-            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # 转换为RGB格式
-            # cropImg = frame[240:600, 720:1400]这里是修改界面选框
+            t1 = time.time()
+            # 转换为RGB格式
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            name = 'D:/BaiduNetdiskDownload/2/'+str(self.c)+'.jpg'
+            cv2.imwrite(name,rgb_frame)
             h, w, ch = rgb_frame.shape
             bytes_per_line = ch * w
             q_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(q_image)
             self.image_label.setPixmap(pixmap)
+            print(self.text)
+            if self.c%8==0:
+                yuce(name)
+            t2 = time.time()
+            print(t2-t1)
+
     # 自定义槽函数，用来在状态栏中显示当前日期时间
     def showtime(self):
 
@@ -80,8 +95,8 @@ class CameraWindow(QMainWindow):
         datetime = QtCore.QDateTime.currentDateTime()
         self.ui.textBrowser_4.clear()
         # 格式化日期时间
-        text = datetime.toString('HH:mm:ss')
-        self.ui.textBrowser_4.append(text)
+        self.text = datetime.toString('HH:mm:ss')
+        self.ui.textBrowser_4.append(self.text)
 
     def goreturn(self):
         self.win = InterfaceWindow()
@@ -216,9 +231,9 @@ class InterfaceWindow(QMainWindow):
 
     def update_frame(self):
         self.camera = cv2.VideoCapture(0)
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.update_img)
-        self.timer.start()
+        self.timer1 = QTimer(self)
+        self.timer1.timeout.connect(self.update_img)
+        self.timer1.start()
     def update_img(self):
         ret, frame = self.camera.read()  # 读取摄像头帧
         if ret:
@@ -227,10 +242,12 @@ class InterfaceWindow(QMainWindow):
             bytes_per_line = ch * w
             q_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(q_image)
-
             self.image_label.setPixmap(pixmap)
+
+
+
     def go_to_inter1(self):
-        self.timer.stop()
+        self.timer1.stop()
         self.close()
         global cameras
         cameras = "频道1"
@@ -267,8 +284,6 @@ class InterfaceWindow(QMainWindow):
     def mouseReleaseEvent(self, mouse_event):
         self.m_flag = False
         self.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
-
-
 
 
 if __name__ == "__main__":

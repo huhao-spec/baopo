@@ -20,7 +20,7 @@ def yuce(root):
     img_path = root
     assert os.path.exists(img_path), "file: '{}' dose not exist.".format(img_path)
     img = Image.open(img_path)
-    # plt.imshow(img)
+
     # [N, C, H, W]
     img = data_transform(img)
     # expand batch dimension

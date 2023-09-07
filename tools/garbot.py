@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
-from skimage.color import rgb2gray
 
 
 def dft2(im):
