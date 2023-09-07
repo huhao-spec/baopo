@@ -30,8 +30,10 @@ def yuce(root):
     assert os.path.exists(json_path), "file: '{}' dose not exist.".format(json_path)
     with open(json_path, "r") as f:
         class_indict = json.load(f)
+
     # create model
     model = create_model(num_classes=3).to(device)
+
     # load model weights
     model_weight_path = "D:/undergrate_project/rongyexijing\weights\model-9.pth"
     model.load_state_dict(torch.load(model_weight_path, map_location=device))

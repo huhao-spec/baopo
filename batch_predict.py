@@ -5,7 +5,7 @@ import torch
 from PIL import Image
 from torchvision import transforms
 
-from model import efficientnet_b0 as create_model
+from model_mobile_net import MobileNetV2 as create_model
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
 
     # load image
     # 指向需要遍历预测的图像文件夹
-    imgs_root = "C:/Users/22208223087/Desktop/1/4"
+    imgs_root = "D:/BaiduNetdiskDownload/1/2"
     # assert os.path.exists(imgs_root), f"file: '{imgs_root}' dose not exist."
     # 读取指定文件夹下所有jpg图像路径
     img_path_list = [os.path.join(imgs_root, i) for i in os.listdir(imgs_root) if i.endswith(".png")]
@@ -35,7 +35,7 @@ def main():
     model = create_model(num_classes=3).to(device)
 
     # load model weights
-    weights_path = "model-27.pth"
+    weights_path = "D:/undergrate_project/rongyexijing/weights/model-9.pth"
     assert os.path.exists(weights_path), f"file: '{weights_path}' dose not exist."
     model.load_state_dict(torch.load(weights_path, map_location=device))
 
@@ -49,8 +49,8 @@ def main():
                 assert os.path.exists(img_path), f"file: '{img_path}' dose not exist."
                 img = Image.open(img_path)
                 img = data_transform(img)
-
                 img_list.append(img)
+
 
             # batch img
             # 将img_list列表中的所有图像打包成一个batch
@@ -59,9 +59,6 @@ def main():
             output = model(batch_img.to(device)).cpu()
             predict = torch.softmax(output, dim=1)
             probs, classes = torch.max(predict, dim=1)
-
-
-
 
             for idx, (pro, cla) in enumerate(zip(probs, classes)):
                 print("image: {}  class: {}  prob: {:.3}".format(img_path_list[ids * batch_size + idx],

@@ -6,15 +6,7 @@ import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 import torch.optim.lr_scheduler as lr_scheduler
-
-# from model_denesnet import densenet121 as create_model
 from model_mobile_net import MobileNetV2 as create_model
-# from model_resnet_model import resnet50 as create_model
-# from model_mobile_net import MobileNetV2 as create_model
-# from model import efficientnet_b0 as create_model
-# from model1 import efficientnet_b0 as create_model
-# from model_shufflenet import shufflenet_v2_x1_0 as create_model
-# from model_swintransformer import swin_tiny_patch4_window7_224 as create_model
 from my_dataset import MyDataSet
 from utils import read_split_data, train_one_epoch, evaluate
 
