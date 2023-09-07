@@ -1,11 +1,11 @@
 import cv2
 from PyQt5.QtCore import QTimer
-
+from tools.predict import yuce
 from login import *
 from interfaceui import *
 from camera import *
 import sys
-import time
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtGui import QPixmap, QImage
@@ -58,7 +58,7 @@ class CameraWindow(QMainWindow):
 
         self.show()
     def update_frame(self):
-        url = "D:\BaiduNetdiskDownload/2.mp4"
+        url = "D:\BaiduNetdiskDownload/1.mp4"
         self.camera = cv2.VideoCapture(url)
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_img)
@@ -67,6 +67,7 @@ class CameraWindow(QMainWindow):
         ret, frame = self.camera.read()  # 读取摄像头帧
         if ret:
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # 转换为RGB格式
+            # cropImg = frame[240:600, 720:1400]这里是修改界面选框
             h, w, ch = rgb_frame.shape
             bytes_per_line = ch * w
             q_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
