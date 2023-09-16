@@ -1,5 +1,5 @@
-from torch import nn
 import torch
+from torch import nn
 
 
 def _make_divisible(ch, divisor=8, min_ch=None):
@@ -112,5 +112,4 @@ class MobileNetV2(nn.Module):
         x = self.features(x)
         x = self.avgpool(x)
         x = torch.flatten(x, 1)
-        x = self.classifier(x)
         return x

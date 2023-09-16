@@ -1,20 +1,22 @@
-import os
 import json
-import time
+import os
+
 import torch
 from PIL import Image
 from torchvision import transforms
-import matplotlib.pyplot as plt
+
 from model_mobile_net import MobileNetV2 as create_model
 
 
 def yuce(root):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
     data_transform = transforms.Compose(
         [transforms.Resize(224),
          transforms.CenterCrop(224),
          transforms.ToTensor(),
          transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+
     # load image
     img_path = root
     assert os.path.exists(img_path), "file: '{}' dose not exist.".format(img_path)
@@ -22,8 +24,10 @@ def yuce(root):
 
     # [N, C, H, W]
     img = data_transform(img)
+
     # expand batch dimension
     img = torch.unsqueeze(img, dim=0)
+
     # read class_indict
     json_path = 'D:/undergrate_project/rongyexijing/class_indices.json'
     assert os.path.exists(json_path), "file: '{}' dose not exist.".format(json_path)

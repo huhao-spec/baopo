@@ -1,5 +1,6 @@
-import os
 import json
+import os
+
 import numpy as np
 import torch
 from PIL import Image
@@ -50,7 +51,6 @@ def main():
                 img = Image.open(img_path)
                 img = data_transform(img)
                 img_list.append(img)
-
 
             # batch img
             # 将img_list列表中的所有图像打包成一个batch

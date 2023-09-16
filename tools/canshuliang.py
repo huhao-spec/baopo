@@ -4,7 +4,8 @@ pip install thop
 '''
 import torch
 from thop import profile
-from MODEL_VGG import AlexNet as create_model
+
+from model_mobile_net import MobileNetV2 as create_model
 
 device = torch.device("cuda")
 # input_shape of model,batch_size=1
