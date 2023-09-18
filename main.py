@@ -1,22 +1,25 @@
+import sys
 import time
 
 import cv2
-from PyQt5.QtCore import QTimer, QThread, pyqtSignal
-from tools.predict import yuce
-from login import *
-from interfaceui import *
-from camera import *
-import sys
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QPixmap, QImage
 from PyQt5.QtWidgets import QApplication, QLabel, QSizePolicy
+from PyQt5.QtWidgets import QMainWindow
+
+from Snap7.pySnap7 import Smart200
+from camera import *
+from interfaceui import *
+from login import *
+from tools.predict import yuce
 
 user_now = ''  # 当前用户
 cameras = ""  # 摄像头频道
 crystal = ""  # 结晶状态
 temperature = ''  # 温度
+ce = Smart200('192.168.2.1')
+ret = ce.ConnectPLC()
 
 
 # 析晶溶液检测界面
@@ -62,6 +65,8 @@ class CameraWindow(QMainWindow):
         self.show()
 
     def update_frame(self):
+        a = ce.WriteData('V', 2.2, 1)
+        print(a)
         # 调用定时器更摄像头
         self.camera = cv2.VideoCapture(0)
         self.timer1 = QTimer(self)
@@ -72,6 +77,8 @@ class CameraWindow(QMainWindow):
     def update_img(self):
         # 摄像头更新实现函数
         ret, frame = self.camera.read()  # 读取摄像头帧
+        a = ce.ReadData('VD', 56)
+        print(a)
         self.c += 1
         if ret:
             t1 = time.time()

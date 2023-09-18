@@ -46,5 +46,5 @@ def yuce(root):
         output = torch.squeeze(model(img.to(device))).cpu()
         predict = torch.softmax(output, dim=0)
         predict_cla = torch.argmax(predict).numpy()
-    print_res = "class: {}".format(class_indict[str(predict_cla)])
-    print(print_res)
+    # print_res = "class: {}".format(class_indict[str(predict_cla)])
+    print(predict_cla)

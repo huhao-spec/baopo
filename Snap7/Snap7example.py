@@ -4,12 +4,15 @@ from Snap7.pySnap7 import Smart200
 
 if __name__ == '__main__':
     # 连接PLC
-    c = Smart200('192.168.2.10')
+    c = Smart200('192.168.2.1')
     ret = c.ConnectPLC()
     print(ret)
     while ret:
 
-        """ I区读取 """
+        """ 
+        I区读取
+        写入........................................................................................................................................................................................................... 
+        """
         a = c.ReadData('I', 0.0)
         print(a)
         a = c.ReadData('IB', 0)
@@ -61,10 +64,18 @@ if __name__ == '__main__':
         a = c.ReadData('MD', 0)
         print(a)
 
-        """ V区读写 """
+        """ V区读写 
+        输入V2.2开始输入，控制开始
+        如果把设备输入
+        a = c.WriteData('V', 2.2, 1)开始
+        a = c.WriteData('V', 2.2, 0)关闭
+        读取操作
+        
+        """
         a = c.WriteData('V', 0.0, 1)
         print(a)
         a = c.ReadData('V', 0.0)
+        # a = c.ReadData('V', 0.5)读结晶信号。
         print(a)
 
         a = c.WriteData('VB', 0, 2)
@@ -80,6 +91,11 @@ if __name__ == '__main__':
         a = c.WriteData('VD', 0, 65538)
         print(a)
         a = c.ReadData('VD', 0)
+        #  a = c.ReadData('VD', 48)读密度，都是浮点
+        #  a = c.ReadData('VD', 44)读ph值接受浮点型数据
+        #  a = c.ReadData('VD', 52)窗外温度
+        #  a = c.ReadData('VD', 56)目标温度
+
         print(a)
 
         # 判断错误代码
