@@ -14,14 +14,17 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow1(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1138, 719)
+        MainWindow.resize(901, 538)
         font = QtGui.QFont()
         font.setPointSize(10)
         MainWindow.setFont(font)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(140, 30, 711, 491))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -41,15 +44,15 @@ class Ui_MainWindow1(object):
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.label_2 = QtWidgets.QLabel(self.frame_2)
-        self.label_2.setGeometry(QtCore.QRect(0, 0, 425, 489))
+        self.label_2.setGeometry(QtCore.QRect(0, 0, 361, 541))
         self.label_2.setStyleSheet("border-image:url(:/images/images/back1.png);\n"
-"border-top-right-radius:10px;\n"
-"border-bottom-right-radius:10px;")
+                                   "border-top-right-radius:10px;\n"
+                                   "border-bottom-right-radius:10px;")
         self.label_2.setLineWidth(-10)
         self.label_2.setText("")
         self.label_2.setObjectName("label_2")
         self.widget = QtWidgets.QWidget(self.frame_2)
-        self.widget.setGeometry(QtCore.QRect(120, 40, 191, 71))
+        self.widget.setGeometry(QtCore.QRect(80, 40, 191, 71))
         self.widget.setObjectName("widget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -89,7 +92,7 @@ class Ui_MainWindow1(object):
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayout.addWidget(self.pushButton_2)
         self.widget_3 = QtWidgets.QWidget(self.frame_2)
-        self.widget_3.setGeometry(QtCore.QRect(360, 0, 61, 41))
+        self.widget_3.setGeometry(QtCore.QRect(290, 0, 61, 41))
         self.widget_3.setObjectName("widget_3")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget_3)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -124,21 +127,11 @@ class Ui_MainWindow1(object):
         self.pushButton_4.setObjectName("pushButton_4")
         self.horizontalLayout_2.addWidget(self.pushButton_4)
         self.widget_4 = QtWidgets.QWidget(self.frame_2)
-        self.widget_4.setGeometry(QtCore.QRect(30, 140, 341, 311))
+        self.widget_4.setGeometry(QtCore.QRect(30, 110, 301, 331))
         self.widget_4.setStyleSheet("")
         self.widget_4.setObjectName("widget_4")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.widget_4)
-        self.lineEdit_3.setGeometry(QtCore.QRect(20, 30, 291, 51))
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        self.lineEdit_3.setFont(font)
-        self.lineEdit_3.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-"border:1px solid rgba(0,0,0,0);\n"
-"border-radius:7px;\n"
-"border-color: rgb(0, 0, 0);")
-        self.lineEdit_3.setObjectName("lineEdit_3")
         self.lineEdit_4 = QtWidgets.QLineEdit(self.widget_4)
-        self.lineEdit_4.setGeometry(QtCore.QRect(20, 100, 291, 51))
+        self.lineEdit_4.setGeometry(QtCore.QRect(10, 70, 281, 60))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lineEdit_4.setFont(font)
@@ -149,7 +142,7 @@ class Ui_MainWindow1(object):
         self.lineEdit_4.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.lineEdit_4.setObjectName("lineEdit_4")
         self.lineEdit_5 = QtWidgets.QLineEdit(self.widget_4)
-        self.lineEdit_5.setGeometry(QtCore.QRect(20, 170, 291, 51))
+        self.lineEdit_5.setGeometry(QtCore.QRect(10, 150, 281, 60))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lineEdit_5.setFont(font)
@@ -159,17 +152,17 @@ class Ui_MainWindow1(object):
 "border-color: rgb(0, 0, 0);")
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.pushButton_6 = QtWidgets.QPushButton(self.widget_4)
-        self.pushButton_6.setGeometry(QtCore.QRect(80, 240, 181, 41))
+        self.pushButton_6.setGeometry(QtCore.QRect(60, 230, 181, 50))
         self.pushButton_6.setStyleSheet("QPushButton#pushButton_6{\n"
-"background-color:rgba(2,65,118,255);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
-"QPushButton#pushButton_6:hover{\n"
-"background-color:rgba(2,65,118,150);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
+                                        "background-color:rgba(2,65,118,255);\n"
+                                        "color:rgba(255,255,255,200);\n"
+                                        "border-radius:5px;\n"
+                                        "}\n"
+                                        "QPushButton#pushButton_6:hover{\n"
+                                        "background-color:rgba(2,65,118,150);\n"
+                                        "color:rgba(255,255,255,200);\n"
+                                        "border-radius:5px;\n"
+                                        "}\n"
 "QPushButton#pushButton_6:pressed{\n"
 "padding-left:5px;\n"
 "padding-top:5px;\n"
@@ -177,10 +170,10 @@ class Ui_MainWindow1(object):
 "}")
         self.pushButton_6.setObjectName("pushButton_6")
         self.widget_2 = QtWidgets.QWidget(self.frame_2)
-        self.widget_2.setGeometry(QtCore.QRect(30, 120, 341, 291))
+        self.widget_2.setGeometry(QtCore.QRect(20, 140, 321, 301))
         self.widget_2.setObjectName("widget_2")
         self.lineEdit = QtWidgets.QLineEdit(self.widget_2)
-        self.lineEdit.setGeometry(QtCore.QRect(20, 20, 291, 61))
+        self.lineEdit.setGeometry(QtCore.QRect(20, 40, 281, 61))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lineEdit.setFont(font)
@@ -190,7 +183,7 @@ class Ui_MainWindow1(object):
 "border-color: rgb(0, 0, 0);")
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.widget_2)
-        self.lineEdit_2.setGeometry(QtCore.QRect(20, 110, 291, 61))
+        self.lineEdit_2.setGeometry(QtCore.QRect(20, 130, 281, 61))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lineEdit_2.setFont(font)
@@ -201,50 +194,49 @@ class Ui_MainWindow1(object):
         self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.widget_2)
-        self.pushButton_3.setGeometry(QtCore.QRect(20, 220, 291, 51))
+        self.pushButton_3.setGeometry(QtCore.QRect(50, 230, 211, 51))
         self.pushButton_3.setStyleSheet("QPushButton#pushButton_3{\n"
-"background-color:rgba(2,65,118,255);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
-"QPushButton#pushButton_3:hover{\n"
-"background-color:rgba(2,65,118,150);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
+                                        "background-color:rgba(2,65,118,255);\n"
+                                        "color:rgba(255,255,255,200);\n"
+                                        "border-radius:5px;\n"
+                                        "}\n"
+                                        "QPushButton#pushButton_3:hover{\n"
+                                        "background-color:rgba(2,65,118,150);\n"
+                                        "color:rgba(255,255,255,200);\n"
+                                        "border-radius:5px;\n"
+                                        "}\n"
 "QPushButton#pushButton_3:pressed{\n"
 "padding-left:5px;\n"
 "padding-top:5px;\n"
-"background-color:rgba(2,65,118,100);\n"
-"}")
+                                        "background-color:rgba(2,65,118,100);\n"
+                                        "}")
         self.pushButton_3.setObjectName("pushButton_3")
         self.checkBox = QtWidgets.QCheckBox(self.widget_2)
-        self.checkBox.setGeometry(QtCore.QRect(30, 190, 71, 21))
+        self.checkBox.setGeometry(QtCore.QRect(20, 200, 71, 21))
         font = QtGui.QFont()
         font.setPointSize(8)
         self.checkBox.setFont(font)
         self.checkBox.setObjectName("checkBox")
         self.horizontalLayout_3.addWidget(self.frame_2)
-        self.horizontalLayout_3.setStretch(0, 4)
-        self.horizontalLayout_3.setStretch(1, 6)
+        self.horizontalLayout_3.setStretch(0, 6)
+        self.horizontalLayout_3.setStretch(1, 4)
+        self.horizontalLayout_4.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.pushButton_5.clicked.connect(MainWindow.showMinimized) # type: ignore
-        self.pushButton_4.clicked.connect(MainWindow.close) # type: ignore
+        self.pushButton_5.clicked.connect(MainWindow.showMinimized)  # type: ignore
+        self.pushButton_4.clicked.connect(MainWindow.close)  # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "登录"))
-        self.pushButton_2.setText(_translate("MainWindow", "注册"))
-        self.lineEdit_3.setPlaceholderText(_translate("MainWindow", "输入账号："))
-        self.lineEdit_4.setPlaceholderText(_translate("MainWindow", "设置密码："))
-        self.lineEdit_5.setPlaceholderText(_translate("MainWindow", "确认密码："))
-        self.pushButton_6.setText(_translate("MainWindow", "确定"))
+        self.pushButton_2.setText(_translate("MainWindow", "管理员"))
+        self.lineEdit_4.setPlaceholderText(_translate("MainWindow", "账号："))
+        self.lineEdit_5.setPlaceholderText(_translate("MainWindow", "密码："))
+        self.pushButton_6.setText(_translate("MainWindow", "登录"))
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "账号："))
         self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "密码："))
         self.pushButton_3.setText(_translate("MainWindow", "登录"))
         self.checkBox.setText(_translate("MainWindow", "记住"))
-import resource_rc

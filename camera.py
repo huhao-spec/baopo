@@ -14,11 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow3(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1465, 663)
+        MainWindow.resize(1101, 745)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(10, 10, 1200, 650))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -30,207 +31,280 @@ class Ui_MainWindow3(object):
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
-        self.horizontalLayoutWidget = QtWidgets.QWidget(self.frame_2)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(-1, -1, 721, 651))
-        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout_timevc = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout_timevc.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_2)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.widget_2 = QtWidgets.QWidget(self.frame_2)
+        self.widget_2.setObjectName("widget_2")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.widget_2)
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_5.setSpacing(0)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.horizontalLayout_timevc = QtWidgets.QHBoxLayout()
         self.horizontalLayout_timevc.setObjectName("horizontalLayout_timevc")
+        self.horizontalLayout_5.addLayout(self.horizontalLayout_timevc)
+        self.horizontalLayout_4.addWidget(self.widget_2)
         self.horizontalLayout.addWidget(self.frame_2)
         self.frame_3 = QtWidgets.QFrame(self.frame)
+        self.frame_3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+                                   "")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
-        self.label = QtWidgets.QLabel(self.frame_3)
-        self.label.setGeometry(QtCore.QRect(0, 0, 480, 650))
-        self.label.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.label.setText("")
-        self.label.setObjectName("label")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.frame_3)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName("verticalLayout")
         self.widget_1 = QtWidgets.QWidget(self.frame_3)
-        self.widget_1.setGeometry(QtCore.QRect(360, 0, 121, 51))
         self.widget_1.setObjectName("widget_1")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget_1)
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        spacerItem = QtWidgets.QSpacerItem(450, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem)
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.pushButton = QtWidgets.QPushButton(self.widget_1)
         self.pushButton.setStyleSheet("#pushButton{\n"
-"    border:none;\n"
-"}\n"
-"QPushButton#pushButton:pressed{\n"
-"padding-left:5px;\n"
-"padding-top:5px;\n"
-"}")
+                                      "    border:none;\n"
+                                      "}\n"
+                                      "QPushButton#pushButton:pressed{\n"
+                                      "padding-left:5px;\n"
+                                      "padding-top:5px;\n"
+                                      "}")
         self.pushButton.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/icons/quit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton.setIcon(icon)
         self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_3.addWidget(self.pushButton)
+        self.horizontalLayout_6.addWidget(self.pushButton)
         self.pushButton_2 = QtWidgets.QPushButton(self.widget_1)
         self.pushButton_2.setStyleSheet("#pushButton_2{\n"
 "    border:none;\n"
-"}\n"
-"QPushButton#pushButton_2:pressed{\n"
-"padding-left:5px;\n"
-"padding-top:5px;\n"
-"}")
+                                        "}\n"
+                                        "QPushButton#pushButton_2:pressed{\n"
+                                        "padding-left:5px;\n"
+                                        "padding-top:5px;\n"
+                                        "}")
         self.pushButton_2.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icons/icons/minus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_2.setIcon(icon1)
         self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_3.addWidget(self.pushButton_2)
+        self.horizontalLayout_6.addWidget(self.pushButton_2)
+        self.pushButton_3 = QtWidgets.QPushButton(self.widget_1)
+        self.pushButton_3.setStyleSheet("#pushButton_3{\n"
+                                        "    border:none;\n"
+                                        "}\n"
+                                        "QPushButton#pushButton_3:pressed{\n"
+                                        "padding-left:5px;\n"
+                                        "padding-top:5px;\n"
+                                        "}")
+        self.pushButton_3.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/icons/icons/simui-minmax.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_3.setIcon(icon2)
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.horizontalLayout_6.addWidget(self.pushButton_3)
         self.pushButton_1 = QtWidgets.QPushButton(self.widget_1)
         self.pushButton_1.setStyleSheet("#pushButton_1{\n"
-"    border:none;\n"
-"}\n"
-"QPushButton#pushButton_1:pressed{\n"
-"padding-left:5px;\n"
-"padding-top:5px;\n"
-"}")
+                                        "    border:none;\n"
+                                        "}\n"
+                                        "QPushButton#pushButton_1:pressed{\n"
+                                        "padding-left:5px;\n"
+                                        "padding-top:5px;\n"
+                                        "}")
         self.pushButton_1.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/icons/icons/close.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_1.setIcon(icon2)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/icons/icons/close.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_1.setIcon(icon3)
         self.pushButton_1.setObjectName("pushButton_1")
-        self.horizontalLayout_3.addWidget(self.pushButton_1)
+        self.horizontalLayout_6.addWidget(self.pushButton_1)
+        self.horizontalLayout_3.addLayout(self.horizontalLayout_6)
+        self.verticalLayout.addWidget(self.widget_1)
+        spacerItem1 = QtWidgets.QSpacerItem(5, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.verticalLayout.addItem(spacerItem1)
         self.label_3 = QtWidgets.QLabel(self.frame_3)
-        self.label_3.setGeometry(QtCore.QRect(70, 0, 291, 131))
         font = QtGui.QFont()
-        font.setPointSize(23)
+        font.setPointSize(30)
         self.label_3.setFont(font)
+        self.label_3.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
+        self.verticalLayout.addWidget(self.label_3)
         self.widget = QtWidgets.QWidget(self.frame_3)
-        self.widget.setGeometry(QtCore.QRect(30, 120, 411, 521))
         self.widget.setObjectName("widget")
-        self.label_4 = QtWidgets.QLabel(self.widget)
-        self.label_4.setGeometry(QtCore.QRect(80, 70, 171, 61))
-        font = QtGui.QFont()
-        font.setPointSize(13)
-        self.label_4.setFont(font)
-        self.label_4.setObjectName("label_4")
-        self.label_2 = QtWidgets.QLabel(self.widget)
-        self.label_2.setGeometry(QtCore.QRect(110, 140, 131, 71))
-        font = QtGui.QFont()
-        font.setPointSize(13)
-        self.label_2.setFont(font)
-        self.label_2.setObjectName("label_2")
+        self.gridLayout = QtWidgets.QGridLayout(self.widget)
+        self.gridLayout.setContentsMargins(9, 9, 9, 9)
+        self.gridLayout.setHorizontalSpacing(0)
+        self.gridLayout.setVerticalSpacing(20)
+        self.gridLayout.setObjectName("gridLayout")
         self.label_5 = QtWidgets.QLabel(self.widget)
-        self.label_5.setGeometry(QtCore.QRect(60, 0, 181, 61))
+        self.label_5.setMinimumSize(QtCore.QSize(0, 0))
         font = QtGui.QFont()
-        font.setPointSize(13)
+        font.setPointSize(15)
         self.label_5.setFont(font)
+        self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
-        self.pushButton_return = QtWidgets.QPushButton(self.widget)
-        self.pushButton_return.setGeometry(QtCore.QRect(200, 460, 201, 51))
-        font = QtGui.QFont()
-        font.setPointSize(16)
-        self.pushButton_return.setFont(font)
-        self.pushButton_return.setStyleSheet("QPushButton#pushButton_return{\n"
-"background-color:rgba(2,65,118,255);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
-"QPushButton#pushButton_return:hover{\n"
-"background-color:rgba(2,65,118,150);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
-"QPushButton#pushButton_return:pressed{\n"
-"padding-left:5px;\n"
-"padding-top:5px;\n"
-"background-color:rgba(2,65,118,100);\n"
-"}")
-        self.pushButton_return.setObjectName("pushButton_return")
-        self.textBrowser_1 = QtWidgets.QTextBrowser(self.widget)
-        self.textBrowser_1.setGeometry(QtCore.QRect(200, 10, 171, 51))
-        self.textBrowser_1.setObjectName("textBrowser_1")
-        self.textBrowser_2 = QtWidgets.QTextBrowser(self.widget)
-        self.textBrowser_2.setGeometry(QtCore.QRect(200, 80, 171, 51))
-        self.textBrowser_2.setObjectName("textBrowser_2")
-        self.textBrowser_3 = QtWidgets.QTextBrowser(self.widget)
-        self.textBrowser_3.setGeometry(QtCore.QRect(200, 150, 171, 51))
-        self.textBrowser_3.setObjectName("textBrowser_3")
-        self.label_6 = QtWidgets.QLabel(self.widget)
-        self.label_6.setGeometry(QtCore.QRect(110, 220, 121, 61))
-        font = QtGui.QFont()
-        font.setPointSize(13)
-        self.label_6.setFont(font)
-        self.label_6.setObjectName("label_6")
+        self.gridLayout.addWidget(self.label_5, 0, 0, 2, 1)
         self.textBrowser_4 = QtWidgets.QTextBrowser(self.widget)
-        self.textBrowser_4.setGeometry(QtCore.QRect(200, 300, 171, 51))
+        self.textBrowser_4.setMinimumSize(QtCore.QSize(0, 50))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.textBrowser_4.setFont(font)
         self.textBrowser_4.setObjectName("textBrowser_4")
+        self.gridLayout.addWidget(self.textBrowser_4, 8, 1, 1, 2)
+        self.label_7 = QtWidgets.QLabel(self.widget)
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_7.setFont(font)
+        self.label_7.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_7.setObjectName("label_7")
+        self.gridLayout.addWidget(self.label_7, 7, 0, 2, 1)
         self.pushButton_wash = QtWidgets.QPushButton(self.widget)
-        self.pushButton_wash.setGeometry(QtCore.QRect(40, 380, 121, 51))
+        self.pushButton_wash.setMinimumSize(QtCore.QSize(70, 60))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.pushButton_wash.setFont(font)
         self.pushButton_wash.setStyleSheet("QPushButton#pushButton_wash{\n"
-"background-color:rgba(2,65,118,255);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
-"QPushButton#pushButton_wash:hover{\n"
-"background-color:rgba(2,65,118,150);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
-"QPushButton#pushButton_wash:pressed{\n"
-"padding-left:5px;\n"
-"padding-top:5px;\n"
-"background-color:rgba(2,65,118,100);\n"
-"}")
+                                           "background-color:rgba(2,65,118,255);\n"
+                                           "color:rgba(255,255,255,200);\n"
+                                           "border-radius:5px;\n"
+                                           "}\n"
+                                           "QPushButton#pushButton_wash:hover{\n"
+                                           "background-color:rgba(2,65,118,150);\n"
+                                           "color:rgba(255,255,255,200);\n"
+                                           "border-radius:5px;\n"
+                                           "}\n"
+                                           "QPushButton#pushButton_wash:pressed{\n"
+                                           "padding-left:5px;\n"
+                                           "padding-top:5px;\n"
+                                           "background-color:rgba(2,65,118,100);\n"
+                                           "}")
         self.pushButton_wash.setObjectName("pushButton_wash")
+        self.gridLayout.addWidget(self.pushButton_wash, 9, 0, 1, 1)
+        self.textBrowser_5 = QtWidgets.QTextBrowser(self.widget)
+        self.textBrowser_5.setMinimumSize(QtCore.QSize(0, 50))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.textBrowser_5.setFont(font)
+        self.textBrowser_5.setObjectName("textBrowser_5")
+        self.gridLayout.addWidget(self.textBrowser_5, 6, 1, 1, 2)
+        self.label_2 = QtWidgets.QLabel(self.widget)
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_2.setFont(font)
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout.addWidget(self.label_2, 4, 0, 2, 1)
+        self.textBrowser_1 = QtWidgets.QTextBrowser(self.widget)
+        self.textBrowser_1.setMinimumSize(QtCore.QSize(0, 50))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.textBrowser_1.setFont(font)
+        self.textBrowser_1.setObjectName("textBrowser_1")
+        self.gridLayout.addWidget(self.textBrowser_1, 1, 1, 1, 2)
+        self.label_4 = QtWidgets.QLabel(self.widget)
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_4.setFont(font)
+        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 2, 0, 2, 1)
+        self.label_6 = QtWidgets.QLabel(self.widget)
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_6.setFont(font)
+        self.label_6.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_6.setObjectName("label_6")
+        self.gridLayout.addWidget(self.label_6, 6, 0, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(122, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem2, 9, 1, 1, 1)
         self.pushButton_end = QtWidgets.QPushButton(self.widget)
-        self.pushButton_end.setGeometry(QtCore.QRect(240, 380, 121, 51))
+        self.pushButton_end.setMinimumSize(QtCore.QSize(70, 60))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.pushButton_end.setFont(font)
         self.pushButton_end.setStyleSheet("QPushButton#pushButton_end{\n"
-"background-color:rgba(2,65,118,255);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
-"QPushButton#pushButton_end:hover{\n"
-"background-color:rgba(2,65,118,150);\n"
-"color:rgba(255,255,255,200);\n"
-"border-radius:5px;\n"
-"}\n"
-"QPushButton#pushButton_end:pressed{\n"
-"padding-left:5px;\n"
-"padding-top:5px;\n"
-"background-color:rgba(2,65,118,100);\n"
-"}")
+                                          "background-color:rgba(2,65,118,255);\n"
+                                          "color:rgba(255,255,255,200);\n"
+                                          "border-radius:5px;\n"
+                                          "}\n"
+                                          "QPushButton#pushButton_end:hover{\n"
+                                          "background-color:rgba(2,65,118,150);\n"
+                                          "color:rgba(255,255,255,200);\n"
+                                          "border-radius:5px;\n"
+                                          "}\n"
+                                          "QPushButton#pushButton_end:pressed{\n"
+                                          "padding-left:5px;\n"
+                                          "padding-top:5px;\n"
+                                          "background-color:rgba(2,65,118,100);\n"
+                                          "}")
         self.pushButton_end.setObjectName("pushButton_end")
-        self.label_7 = QtWidgets.QLabel(self.widget)
-        self.label_7.setGeometry(QtCore.QRect(110, 290, 121, 61))
+        self.gridLayout.addWidget(self.pushButton_end, 9, 2, 1, 1)
+        self.textBrowser_3 = QtWidgets.QTextBrowser(self.widget)
+        self.textBrowser_3.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
-        font.setPointSize(13)
-        self.label_7.setFont(font)
-        self.label_7.setObjectName("label_7")
-        self.textBrowser_5 = QtWidgets.QTextBrowser(self.widget)
-        self.textBrowser_5.setGeometry(QtCore.QRect(200, 220, 171, 51))
-        self.textBrowser_5.setObjectName("textBrowser_5")
+        font.setPointSize(15)
+        self.textBrowser_3.setFont(font)
+        self.textBrowser_3.setObjectName("textBrowser_3")
+        self.gridLayout.addWidget(self.textBrowser_3, 5, 1, 1, 2)
+        self.textBrowser_2 = QtWidgets.QTextBrowser(self.widget)
+        self.textBrowser_2.setMinimumSize(QtCore.QSize(0, 50))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.textBrowser_2.setFont(font)
+        self.textBrowser_2.setObjectName("textBrowser_2")
+        self.gridLayout.addWidget(self.textBrowser_2, 3, 1, 1, 2)
+        self.pushButton_return = QtWidgets.QPushButton(self.widget)
+        self.pushButton_return.setMinimumSize(QtCore.QSize(100, 70))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.pushButton_return.setFont(font)
+        self.pushButton_return.setStyleSheet("QPushButton#pushButton_return{\n"
+                                             "background-color:rgba(2,65,118,255);\n"
+                                             "color:rgba(255,255,255,200);\n"
+                                             "border-radius:5px;\n"
+                                             "}\n"
+                                             "QPushButton#pushButton_return:hover{\n"
+                                             "background-color:rgba(2,65,118,150);\n"
+                                             "color:rgba(255,255,255,200);\n"
+                                             "border-radius:5px;\n"
+                                             "}\n"
+                                             "QPushButton#pushButton_return:pressed{\n"
+                                             "padding-left:5px;\n"
+                                             "padding-top:5px;\n"
+                                             "background-color:rgba(2,65,118,100);\n"
+                                             "}")
+        self.pushButton_return.setObjectName("pushButton_return")
+        self.gridLayout.addWidget(self.pushButton_return, 10, 0, 1, 3)
+        self.verticalLayout.addWidget(self.widget)
+        self.verticalLayout.setStretch(0, 1)
+        self.verticalLayout.setStretch(2, 3)
+        self.verticalLayout.setStretch(3, 8)
         self.horizontalLayout.addWidget(self.frame_3)
         self.horizontalLayout.setStretch(0, 6)
         self.horizontalLayout.setStretch(1, 4)
+        self.horizontalLayout_2.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.pushButton_1.clicked.connect(MainWindow.close) # type: ignore
-        self.pushButton_2.clicked.connect(MainWindow.showMinimized) # type: ignore
+        self.pushButton_1.clicked.connect(MainWindow.close)  # type: ignore
+        self.pushButton_2.clicked.connect(MainWindow.showMinimized)  # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_3.setText(_translate("MainWindow", "溶液结晶检测"))
-        self.label_4.setText(_translate("MainWindow", "结晶状况："))
-        self.label_2.setText(_translate("MainWindow", "温度："))
+        self.label_3.setText(_translate("MainWindow", "溶液结晶检测系统"))
         self.label_5.setText(_translate("MainWindow", "摄像头序号："))
-        self.pushButton_return.setText(_translate("MainWindow", "返回主界面"))
-        self.label_6.setText(_translate("MainWindow", "密度："))
-        self.pushButton_wash.setText(_translate("MainWindow", "冲洗"))
-        self.pushButton_end.setText(_translate("MainWindow", "结束"))
         self.label_7.setText(_translate("MainWindow", "时间："))
-import resource_rc
+        self.pushButton_wash.setText(_translate("MainWindow", "冲洗"))
+        self.label_2.setText(_translate("MainWindow", "温度："))
+        self.label_4.setText(_translate("MainWindow", "结晶状况："))
+        self.label_6.setText(_translate("MainWindow", "密度："))
+        self.pushButton_end.setText(_translate("MainWindow", "结束"))
+        self.pushButton_return.setText(_translate("MainWindow", "返回主界面"))
