@@ -35,8 +35,8 @@ class Ui_MainWindow2(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.frame_1 = QtWidgets.QFrame(self.frame)
         self.frame_1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                   "border-top-left-radius:10px;\n"
-                                   "border-top-right-radius:10px;")
+"border-top-left-radius:10px;\n"
+"border-top-right-radius:10px;")
         self.frame_1.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_1.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_1.setObjectName("frame_1")
@@ -57,12 +57,12 @@ class Ui_MainWindow2(object):
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
         self.pushButton = QtWidgets.QPushButton(self.widget_1)
         self.pushButton.setStyleSheet("#pushButton{\n"
-                                      "    border:none;\n"
-                                      "}\n"
-                                      "QPushButton#pushButton:pressed{\n"
-                                      "padding-left:5px;\n"
-                                      "padding-top:5px;\n"
-                                      "}")
+"    border:none;\n"
+"}\n"
+"QPushButton#pushButton:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"}")
         self.pushButton.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/icons/quit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -72,11 +72,11 @@ class Ui_MainWindow2(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.widget_1)
         self.pushButton_2.setStyleSheet("#pushButton_2{\n"
 "    border:none;\n"
-                                        "}\n"
-                                        "QPushButton#pushButton_2:pressed{\n"
-                                        "padding-left:5px;\n"
-                                        "padding-top:5px;\n"
-                                        "}")
+"}\n"
+"QPushButton#pushButton_2:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"}")
         self.pushButton_2.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icons/icons/minus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -85,12 +85,12 @@ class Ui_MainWindow2(object):
         self.horizontalLayout_10.addWidget(self.pushButton_2)
         self.pushButton_3 = QtWidgets.QPushButton(self.widget_1)
         self.pushButton_3.setStyleSheet("#pushButton_3{\n"
-                                        "    border:none;\n"
-                                        "}\n"
-                                        "QPushButton#pushButton_3:pressed{\n"
-                                        "padding-left:5px;\n"
-                                        "padding-top:5px;\n"
-                                        "}")
+"    border:none;\n"
+"}\n"
+"QPushButton#pushButton_3:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"}")
         self.pushButton_3.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/icons/icons/simui-minmax.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -99,12 +99,12 @@ class Ui_MainWindow2(object):
         self.horizontalLayout_10.addWidget(self.pushButton_3)
         self.pushButton_1 = QtWidgets.QPushButton(self.widget_1)
         self.pushButton_1.setStyleSheet("#pushButton_1{\n"
-                                        "    border:none;\n"
-                                        "}\n"
-                                        "QPushButton#pushButton_1:pressed{\n"
-                                        "padding-left:5px;\n"
-                                        "padding-top:5px;\n"
-                                        "}")
+"    border:none;\n"
+"}\n"
+"QPushButton#pushButton_1:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"}")
         self.pushButton_1.setText("")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/icons/icons/close.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -159,20 +159,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(16)
         self.pushButton_v1.setFont(font)
         self.pushButton_v1.setStyleSheet("QPushButton#pushButton_v1{\n"
-                                         "background-color:rgba(2,65,118,255);\n"
-                                         "color:rgba(255,255,255,200);\n"
-                                         "border-radius:5px;\n"
-                                         "}\n"
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
 "QPushButton#pushButton_v1:hover{\n"
-                                         "background-color:rgba(2,65,118,150);\n"
-                                         "color:rgba(255,255,255,200);\n"
-                                         "border-radius:5px;\n"
-                                         "}\n"
-                                         "QPushButton#pushButton_v1:pressed{\n"
-                                         "padding-left:5px;\n"
-                                         "padding-top:5px;\n"
-                                         "background-color:rgba(2,65,118,100);\n"
-                                         "}")
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_v1:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_v1.setObjectName("pushButton_v1")
         self.horizontalLayout_9.addWidget(self.pushButton_v1)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -183,20 +183,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(16)
         self.pushButton_run1.setFont(font)
         self.pushButton_run1.setStyleSheet("QPushButton#pushButton_run1{\n"
-                                           "background-color:rgba(2,65,118,255);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
 "QPushButton#pushButton_run1:hover{\n"
-                                           "background-color:rgba(2,65,118,150);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
-                                           "QPushButton#pushButton_run1:pressed{\n"
-                                           "padding-left:5px;\n"
-                                           "padding-top:5px;\n"
-                                           "background-color:rgba(2,65,118,100);\n"
-                                           "}")
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_run1:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_run1.setObjectName("pushButton_run1")
         self.horizontalLayout_9.addWidget(self.pushButton_run1)
         spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -245,20 +245,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(16)
         self.pushButton_v2.setFont(font)
         self.pushButton_v2.setStyleSheet("QPushButton#pushButton_v2{\n"
-                                         "background-color:rgba(2,65,118,255);\n"
-                                         "color:rgba(255,255,255,200);\n"
-                                         "border-radius:5px;\n"
-                                         "}\n"
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
 "QPushButton#pushButton_v2:hover{\n"
-                                         "background-color:rgba(2,65,118,150);\n"
-                                         "color:rgba(255,255,255,200);\n"
-                                         "border-radius:5px;\n"
-                                         "}\n"
-                                         "QPushButton#pushButton_v2:pressed{\n"
-                                         "padding-left:5px;\n"
-                                         "padding-top:5px;\n"
-                                         "background-color:rgba(2,65,118,100);\n"
-                                         "}")
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_v2:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_v2.setObjectName("pushButton_v2")
         self.horizontalLayout_8.addWidget(self.pushButton_v2)
         spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -269,20 +269,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(16)
         self.pushButton_run2.setFont(font)
         self.pushButton_run2.setStyleSheet("QPushButton#pushButton_run2{\n"
-                                           "background-color:rgba(2,65,118,255);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
 "QPushButton#pushButton_run2:hover{\n"
-                                           "background-color:rgba(2,65,118,150);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
-                                           "QPushButton#pushButton_run2:pressed{\n"
-                                           "padding-left:5px;\n"
-                                           "padding-top:5px;\n"
-                                           "background-color:rgba(2,65,118,100);\n"
-                                           "}")
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_run2:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_run2.setObjectName("pushButton_run2")
         self.horizontalLayout_8.addWidget(self.pushButton_run2)
         spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -328,20 +328,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(16)
         self.pushButton_v3.setFont(font)
         self.pushButton_v3.setStyleSheet("QPushButton#pushButton_v3{\n"
-                                         "background-color:rgba(2,65,118,255);\n"
-                                         "color:rgba(255,255,255,200);\n"
-                                         "border-radius:5px;\n"
-                                         "}\n"
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
 "QPushButton#pushButton_v3:hover{\n"
-                                         "background-color:rgba(2,65,118,150);\n"
-                                         "color:rgba(255,255,255,200);\n"
-                                         "border-radius:5px;\n"
-                                         "}\n"
-                                         "QPushButton#pushButton_v3:pressed{\n"
-                                         "padding-left:5px;\n"
-                                         "padding-top:5px;\n"
-                                         "background-color:rgba(2,65,118,100);\n"
-                                         "}")
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_v3:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_v3.setObjectName("pushButton_v3")
         self.horizontalLayout_6.addWidget(self.pushButton_v3)
         spacerItem13 = QtWidgets.QSpacerItem(50, 50, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -352,20 +352,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(16)
         self.pushButton_run3.setFont(font)
         self.pushButton_run3.setStyleSheet("QPushButton#pushButton_run3{\n"
-                                           "background-color:rgba(2,65,118,255);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
 "QPushButton#pushButton_run3:hover{\n"
-                                           "background-color:rgba(2,65,118,150);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
-                                           "QPushButton#pushButton_run3:pressed{\n"
-                                           "padding-left:5px;\n"
-                                           "padding-top:5px;\n"
-                                           "background-color:rgba(2,65,118,100);\n"
-                                           "}")
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_run3:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_run3.setObjectName("pushButton_run3")
         self.horizontalLayout_6.addWidget(self.pushButton_run3)
         spacerItem14 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -398,9 +398,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_newpass2.setFont(font)
         self.lineEdit_newpass2.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                             "border:1px solid rgba(0,0,0,0);\n"
-                                             "border-radius:7px;\n"
-                                             "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_newpass2.setObjectName("lineEdit_newpass2")
         self.gridLayout_5.addWidget(self.lineEdit_newpass2, 4, 1, 1, 1)
         self.lineEdit_newpass1 = QtWidgets.QLineEdit(self.page_change)
@@ -409,9 +409,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_newpass1.setFont(font)
         self.lineEdit_newpass1.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                             "border:1px solid rgba(0,0,0,0);\n"
-                                             "border-radius:7px;\n"
-                                             "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_newpass1.setObjectName("lineEdit_newpass1")
         self.gridLayout_5.addWidget(self.lineEdit_newpass1, 2, 1, 1, 1)
         self.pushButton_change = QtWidgets.QPushButton(self.page_change)
@@ -425,15 +425,15 @@ class Ui_MainWindow2(object):
 "border-radius:5px;\n"
 "}\n"
 "QPushButton#pushButton_change:hover{\n"
-                                             "background-color:rgba(2,65,118,150);\n"
-                                             "color:rgba(255,255,255,200);\n"
-                                             "border-radius:5px;\n"
-                                             "}\n"
-                                             "QPushButton#pushButton_change:pressed{\n"
-                                             "padding-left:5px;\n"
-                                             "padding-top:5px;\n"
-                                             "background-color:rgba(2,65,118,100);\n"
-                                             "}")
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_change:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_change.setObjectName("pushButton_change")
         self.gridLayout_5.addWidget(self.pushButton_change, 6, 1, 1, 1)
         spacerItem18 = QtWidgets.QSpacerItem(500, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -446,9 +446,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_pass.setFont(font)
         self.lineEdit_pass.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                         "border:1px solid rgba(0,0,0,0);\n"
-                                         "border-radius:7px;\n"
-                                         "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_pass.setObjectName("lineEdit_pass")
         self.gridLayout_5.addWidget(self.lineEdit_pass, 0, 1, 1, 1)
         spacerItem20 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
@@ -471,20 +471,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(13)
         self.pushButton_find.setFont(font)
         self.pushButton_find.setStyleSheet("QPushButton#pushButton_find{\n"
-                                           "background-color:rgba(2,65,118,255);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
-                                           "QPushButton#pushButton_find:hover{\n"
-                                           "background-color:rgba(2,65,118,150);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
-                                           "QPushButton#pushButton_find:pressed{\n"
-                                           "padding-left:5px;\n"
-                                           "padding-top:5px;\n"
-                                           "background-color:rgba(2,65,118,100);\n"
-                                           "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_find:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_find:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_find.setObjectName("pushButton_find")
         self.gridLayout_6.addWidget(self.pushButton_find, 1, 1, 1, 1)
         self.pushButton_register = QtWidgets.QPushButton(self.page)
@@ -493,20 +493,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(13)
         self.pushButton_register.setFont(font)
         self.pushButton_register.setStyleSheet("QPushButton#pushButton_register{\n"
-                                               "background-color:rgba(2,65,118,255);\n"
-                                               "color:rgba(255,255,255,200);\n"
-                                               "border-radius:5px;\n"
-                                               "}\n"
-                                               "QPushButton#pushButton_register:hover{\n"
-                                               "background-color:rgba(2,65,118,150);\n"
-                                               "color:rgba(255,255,255,200);\n"
-                                               "border-radius:5px;\n"
-                                               "}\n"
-                                               "QPushButton#pushButton_register:pressed{\n"
-                                               "padding-left:5px;\n"
-                                               "padding-top:5px;\n"
-                                               "background-color:rgba(2,65,118,100);\n"
-                                               "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_register:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_register:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_register.setObjectName("pushButton_register")
         self.gridLayout_6.addWidget(self.pushButton_register, 0, 1, 1, 1)
         self.pushButton_delete = QtWidgets.QPushButton(self.page)
@@ -515,20 +515,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(13)
         self.pushButton_delete.setFont(font)
         self.pushButton_delete.setStyleSheet("QPushButton#pushButton_delete{\n"
-                                             "background-color:rgba(2,65,118,255);\n"
-                                             "color:rgba(255,255,255,200);\n"
-                                             "border-radius:5px;\n"
-                                             "}\n"
-                                             "QPushButton#pushButton_delete:hover{\n"
-                                             "background-color:rgba(2,65,118,150);\n"
-                                             "color:rgba(255,255,255,200);\n"
-                                             "border-radius:5px;\n"
-                                             "}\n"
-                                             "QPushButton#pushButton_delete:pressed{\n"
-                                             "padding-left:5px;\n"
-                                             "padding-top:5px;\n"
-                                             "background-color:rgba(2,65,118,100);\n"
-                                             "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_delete:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_delete:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_delete.setObjectName("pushButton_delete")
         self.gridLayout_6.addWidget(self.pushButton_delete, 2, 1, 1, 1)
         spacerItem21 = QtWidgets.QSpacerItem(150, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -558,9 +558,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_register.setFont(font)
         self.lineEdit_register.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                             "border:1px solid rgba(0,0,0,0);\n"
-                                             "border-radius:7px;\n"
-                                             "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_register.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.lineEdit_register.setObjectName("lineEdit_register")
         self.gridLayout_8.addWidget(self.lineEdit_register, 0, 1, 1, 1)
@@ -572,9 +572,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_decode.setFont(font)
         self.lineEdit_decode.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                           "border:1px solid rgba(0,0,0,0);\n"
-                                           "border-radius:7px;\n"
-                                           "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_decode.setObjectName("lineEdit_decode")
         self.gridLayout_8.addWidget(self.lineEdit_decode, 1, 1, 1, 1)
         self.pushButton_affirmregister = QtWidgets.QPushButton(self.page_register)
@@ -583,20 +583,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(13)
         self.pushButton_affirmregister.setFont(font)
         self.pushButton_affirmregister.setStyleSheet("QPushButton#pushButton_affirmregister{\n"
-                                                     "background-color:rgba(2,65,118,255);\n"
-                                                     "color:rgba(255,255,255,200);\n"
-                                                     "border-radius:5px;\n"
-                                                     "}\n"
-                                                     "QPushButton#pushButton_affirmregister:hover{\n"
-                                                     "background-color:rgba(2,65,118,150);\n"
-                                                     "color:rgba(255,255,255,200);\n"
-                                                     "border-radius:5px;\n"
-                                                     "}\n"
-                                                     "QPushButton#pushButton_affirmregister:pressed{\n"
-                                                     "padding-left:5px;\n"
-                                                     "padding-top:5px;\n"
-                                                     "background-color:rgba(2,65,118,100);\n"
-                                                     "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_affirmregister:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_affirmregister:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_affirmregister.setObjectName("pushButton_affirmregister")
         self.gridLayout_8.addWidget(self.pushButton_affirmregister, 3, 1, 1, 1)
         self.lineEdit_AffirmDecode = QtWidgets.QLineEdit(self.page_register)
@@ -605,9 +605,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_AffirmDecode.setFont(font)
         self.lineEdit_AffirmDecode.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                                 "border:1px solid rgba(0,0,0,0);\n"
-                                                 "border-radius:7px;\n"
-                                                 "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_AffirmDecode.setObjectName("lineEdit_AffirmDecode")
         self.gridLayout_8.addWidget(self.lineEdit_AffirmDecode, 2, 1, 1, 1)
         self.stackedWidget_2.addWidget(self.page_register)
@@ -623,9 +623,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_find.setFont(font)
         self.lineEdit_find.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                         "border:1px solid rgba(0,0,0,0);\n"
-                                         "border-radius:7px;\n"
-                                         "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_find.setObjectName("lineEdit_find")
         self.gridLayout_10.addWidget(self.lineEdit_find, 0, 1, 1, 1)
         spacerItem26 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -636,20 +636,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(13)
         self.pushButton_affirmfind.setFont(font)
         self.pushButton_affirmfind.setStyleSheet("QPushButton#pushButton_affirmfind{\n"
-                                                 "background-color:rgba(2,65,118,255);\n"
-                                                 "color:rgba(255,255,255,200);\n"
-                                                 "border-radius:5px;\n"
-                                                 "}\n"
-                                                 "QPushButton#pushButton_affirmfind:hover{\n"
-                                                 "background-color:rgba(2,65,118,150);\n"
-                                                 "color:rgba(255,255,255,200);\n"
-                                                 "border-radius:5px;\n"
-                                                 "}\n"
-                                                 "QPushButton#pushButton_affirmfind:pressed{\n"
-                                                 "padding-left:5px;\n"
-                                                 "padding-top:5px;\n"
-                                                 "background-color:rgba(2,65,118,100);\n"
-                                                 "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_affirmfind:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_affirmfind:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_affirmfind.setObjectName("pushButton_affirmfind")
         self.gridLayout_10.addWidget(self.pushButton_affirmfind, 2, 1, 1, 1)
         self.textBrowser_find = QtWidgets.QTextBrowser(self.page_find)
@@ -672,20 +672,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(12)
         self.pushButton_affirmall.setFont(font)
         self.pushButton_affirmall.setStyleSheet("QPushButton#pushButton_affirmall{\n"
-                                                "background-color:rgba(2,65,118,255);\n"
-                                                "color:rgba(255,255,255,200);\n"
-                                                "border-radius:5px;\n"
-                                                "}\n"
-                                                "QPushButton#pushButton_affirmall:hover{\n"
-                                                "background-color:rgba(2,65,118,150);\n"
-                                                "color:rgba(255,255,255,200);\n"
-                                                "border-radius:5px;\n"
-                                                "}\n"
-                                                "QPushButton#pushButton_affirmall:pressed{\n"
-                                                "padding-left:5px;\n"
-                                                "padding-top:5px;\n"
-                                                "background-color:rgba(2,65,118,100);\n"
-                                                "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_affirmall:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_affirmall:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_affirmall.setObjectName("pushButton_affirmall")
         self.gridLayout_10.addWidget(self.pushButton_affirmall, 4, 2, 1, 1)
         self.stackedWidget_2.addWidget(self.page_find)
@@ -702,20 +702,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(13)
         self.pushButton_affirmdelete.setFont(font)
         self.pushButton_affirmdelete.setStyleSheet("QPushButton#pushButton_affirmdelete{\n"
-                                                   "background-color:rgba(2,65,118,255);\n"
-                                                   "color:rgba(255,255,255,200);\n"
-                                                   "border-radius:5px;\n"
-                                                   "}\n"
-                                                   "QPushButton#pushButton_affirmdelete:hover{\n"
-                                                   "background-color:rgba(2,65,118,150);\n"
-                                                   "color:rgba(255,255,255,200);\n"
-                                                   "border-radius:5px;\n"
-                                                   "}\n"
-                                                   "QPushButton#pushButton_affirmdelete:pressed{\n"
-                                                   "padding-left:5px;\n"
-                                                   "padding-top:5px;\n"
-                                                   "background-color:rgba(2,65,118,100);\n"
-                                                   "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_affirmdelete:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_affirmdelete:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_affirmdelete.setObjectName("pushButton_affirmdelete")
         self.gridLayout_9.addWidget(self.pushButton_affirmdelete, 3, 1, 1, 1)
         self.lineEdit_delete = QtWidgets.QLineEdit(self.page_delete)
@@ -724,9 +724,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_delete.setFont(font)
         self.lineEdit_delete.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                           "border:1px solid rgba(0,0,0,0);\n"
-                                           "border-radius:7px;\n"
-                                           "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_delete.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.lineEdit_delete.setObjectName("lineEdit_delete")
         self.gridLayout_9.addWidget(self.lineEdit_delete, 0, 1, 1, 1)
@@ -740,9 +740,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_managedecode.setFont(font)
         self.lineEdit_managedecode.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                                 "border:1px solid rgba(0,0,0,0);\n"
-                                                 "border-radius:7px;\n"
-                                                 "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_managedecode.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.lineEdit_managedecode.setObjectName("lineEdit_managedecode")
         self.gridLayout_9.addWidget(self.lineEdit_managedecode, 2, 1, 1, 1)
@@ -752,9 +752,9 @@ class Ui_MainWindow2(object):
         font.setPointSize(9)
         self.lineEdit_affirmdelete.setFont(font)
         self.lineEdit_affirmdelete.setStyleSheet("background-color: rgba(0, 0, 0,0);\n"
-                                                 "border:1px solid rgba(0,0,0,0);\n"
-                                                 "border-radius:7px;\n"
-                                                 "border-color: rgb(0, 0, 0);")
+"border:1px solid rgba(0,0,0,0);\n"
+"border-radius:7px;\n"
+"border-color: rgb(0, 0, 0);")
         self.lineEdit_affirmdelete.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.lineEdit_affirmdelete.setObjectName("lineEdit_affirmdelete")
         self.gridLayout_9.addWidget(self.lineEdit_affirmdelete, 1, 1, 1, 1)
@@ -780,8 +780,8 @@ class Ui_MainWindow2(object):
         self.verticalLayout.addWidget(self.stackedWidget)
         self.frame_3 = QtWidgets.QFrame(self.frame)
         self.frame_3.setStyleSheet("background-color: rgb(86, 88, 93);\n"
-                                   "border-bottom-left-radius:10px;\n"
-                                   "border-bottom-right-radius:10px;")
+"border-bottom-left-radius:10px;\n"
+"border-bottom-right-radius:10px;")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
@@ -795,20 +795,20 @@ class Ui_MainWindow2(object):
         font.setPointSize(12)
         self.pushButton_manage.setFont(font)
         self.pushButton_manage.setStyleSheet("QPushButton#pushButton_manage{\n"
-                                             "background-color:rgba(2,65,118,255);\n"
-                                             "color:rgba(255,255,255,200);\n"
-                                             "border-radius:5px;\n"
-                                             "}\n"
-                                             "QPushButton#pushButton_manage:hover{\n"
-                                             "background-color:rgba(2,65,118,150);\n"
-                                             "color:rgba(255,255,255,200);\n"
-                                             "border-radius:5px;\n"
-                                             "}\n"
-                                             "QPushButton#pushButton_manage:pressed{\n"
-                                             "padding-left:5px;\n"
-                                             "padding-top:5px;\n"
-                                             "background-color:rgba(2,65,118,100);\n"
-                                             "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_manage:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_manage:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_manage.setObjectName("pushButton_manage")
         self.gridLayout.addWidget(self.pushButton_manage, 0, 5, 1, 1)
         spacerItem31 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -819,10 +819,10 @@ class Ui_MainWindow2(object):
         font.setPointSize(16)
         self.pushButton_start.setFont(font)
         self.pushButton_start.setStyleSheet("QPushButton#pushButton_start{\n"
-                                            "background-color:rgba(2,65,118,255);\n"
-                                            "color:rgba(255,255,255,200);\n"
-                                            "border-radius:5px;\n"
-                                            "}\n"
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
 "QPushButton#pushButton_start:hover{\n"
 "background-color:rgba(2,65,118,150);\n"
 "color:rgba(255,255,255,200);\n"
@@ -868,15 +868,15 @@ class Ui_MainWindow2(object):
 "border-radius:5px;\n"
 "}\n"
 "QPushButton#pushButton_vc:hover{\n"
-                                         "background-color:rgba(2,65,118,150);\n"
-                                         "color:rgba(255,255,255,200);\n"
-                                         "border-radius:5px;\n"
-                                         "}\n"
-                                         "QPushButton#pushButton_vc:pressed{\n"
-                                         "padding-left:5px;\n"
-                                         "padding-top:5px;\n"
-                                         "background-color:rgba(2,65,118,100);\n"
-                                         "}")
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_vc:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_vc.setObjectName("pushButton_vc")
         self.gridLayout.addWidget(self.pushButton_vc, 0, 3, 1, 1)
         spacerItem32 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
@@ -897,7 +897,7 @@ class Ui_MainWindow2(object):
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(0)
-        self.pushButton_1.clicked.connect(MainWindow.close)  # type: ignore
+        self.pushButton_1.clicked.connect(MainWindow.close) # type: ignore
         self.pushButton_2.clicked.connect(MainWindow.showMinimized) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -934,3 +934,4 @@ class Ui_MainWindow2(object):
         self.pushButton_start.setText(_translate("MainWindow", "运行"))
         self.pushButton_decode.setText(_translate("MainWindow", "更改密码"))
         self.pushButton_vc.setText(_translate("MainWindow", "返回主页面"))
+import resource_rc

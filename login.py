@@ -46,8 +46,8 @@ class Ui_MainWindow1(object):
         self.label_2 = QtWidgets.QLabel(self.frame_2)
         self.label_2.setGeometry(QtCore.QRect(0, 0, 361, 541))
         self.label_2.setStyleSheet("border-image:url(:/images/images/back1.png);\n"
-                                   "border-top-right-radius:10px;\n"
-                                   "border-bottom-right-radius:10px;")
+"border-top-right-radius:10px;\n"
+"border-bottom-right-radius:10px;")
         self.label_2.setLineWidth(-10)
         self.label_2.setText("")
         self.label_2.setObjectName("label_2")
@@ -154,15 +154,15 @@ class Ui_MainWindow1(object):
         self.pushButton_6 = QtWidgets.QPushButton(self.widget_4)
         self.pushButton_6.setGeometry(QtCore.QRect(60, 230, 181, 50))
         self.pushButton_6.setStyleSheet("QPushButton#pushButton_6{\n"
-                                        "background-color:rgba(2,65,118,255);\n"
-                                        "color:rgba(255,255,255,200);\n"
-                                        "border-radius:5px;\n"
-                                        "}\n"
-                                        "QPushButton#pushButton_6:hover{\n"
-                                        "background-color:rgba(2,65,118,150);\n"
-                                        "color:rgba(255,255,255,200);\n"
-                                        "border-radius:5px;\n"
-                                        "}\n"
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_6:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
 "QPushButton#pushButton_6:pressed{\n"
 "padding-left:5px;\n"
 "padding-top:5px;\n"
@@ -196,20 +196,20 @@ class Ui_MainWindow1(object):
         self.pushButton_3 = QtWidgets.QPushButton(self.widget_2)
         self.pushButton_3.setGeometry(QtCore.QRect(50, 230, 211, 51))
         self.pushButton_3.setStyleSheet("QPushButton#pushButton_3{\n"
-                                        "background-color:rgba(2,65,118,255);\n"
-                                        "color:rgba(255,255,255,200);\n"
-                                        "border-radius:5px;\n"
-                                        "}\n"
-                                        "QPushButton#pushButton_3:hover{\n"
-                                        "background-color:rgba(2,65,118,150);\n"
-                                        "color:rgba(255,255,255,200);\n"
-                                        "border-radius:5px;\n"
-                                        "}\n"
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_3:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
 "QPushButton#pushButton_3:pressed{\n"
 "padding-left:5px;\n"
 "padding-top:5px;\n"
-                                        "background-color:rgba(2,65,118,100);\n"
-                                        "}")
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_3.setObjectName("pushButton_3")
         self.checkBox = QtWidgets.QCheckBox(self.widget_2)
         self.checkBox.setGeometry(QtCore.QRect(20, 200, 71, 21))
@@ -224,8 +224,8 @@ class Ui_MainWindow1(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.pushButton_5.clicked.connect(MainWindow.showMinimized)  # type: ignore
-        self.pushButton_4.clicked.connect(MainWindow.close)  # type: ignore
+        self.pushButton_5.clicked.connect(MainWindow.showMinimized) # type: ignore
+        self.pushButton_4.clicked.connect(MainWindow.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -240,3 +240,4 @@ class Ui_MainWindow1(object):
         self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "密码："))
         self.pushButton_3.setText(_translate("MainWindow", "登录"))
         self.checkBox.setText(_translate("MainWindow", "记住"))
+import resource_rc

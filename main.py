@@ -1,27 +1,24 @@
+import cv2
+from PyQt5.QtCore import QTimer
+
+from login import *
+from interfaceui import *
+from camera import *
 import sys
 import time
-
-import cv2
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import QTimer
+from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtGui import QPixmap, QImage
 from PyQt5.QtWidgets import QApplication, QLabel, QSizePolicy
-from PyQt5.QtWidgets import QMainWindow
 
-from camera import *
-from interfaceui import *
-from login import *
 from predict import yuce
 
-# pip freeze > requirements.txt
-
-
-user_now = ''  # 当前用户
-cameras = ""  # 摄像头频道
-crystal = ""  # 结晶状态
-temperature = ''  # 温度
-account = ""  # 用户复写
-
+#pip freeze > requirements.txt
+user_now = ''#当前用户
+cameras = ""#摄像头频道
+crystal =  "" #结晶状态
+temperature = ''#温度
+account = ""#用户复写
 
 class CameraWindow(QMainWindow):
 
@@ -29,11 +26,11 @@ class CameraWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow3()
         self.ui.setupUi(self)
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        # self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.ui.pushButton.clicked.connect(self.log_out)
         self.ui.pushButton_3.clicked.connect(self.toggle_fullscreen)
-        # 模拟输入
+        #模拟输入
         # 创建1个 QTimer计时器对象
         timer = QtCore.QTimer(self)
         # 发射timeout信号，与自定义槽函数关联
@@ -41,16 +38,16 @@ class CameraWindow(QMainWindow):
         # 启动计时器
         timer.start()
 
-        # 模拟
-        crystal = "未结晶"
+        #模拟
+
         temperature = '78.98'
-        # ----------------------------------------------------------------
+        #----------------------------------------------------------------
 
         self.ui.textBrowser_1.append(cameras)
-        self.ui.textBrowser_2.append(crystal)
+
         self.ui.textBrowser_3.append(temperature)
 
-        # 模拟
+        #模拟
         # 创建 QLabel 控件用于显示图像
         self.image_label = QLabel()
         # 加载图像
@@ -61,44 +58,10 @@ class CameraWindow(QMainWindow):
         # 将 QLabel 控件添加到布局中
         self.ui.horizontalLayout_timevc.addWidget(self.image_label)
         #------------------------------------------------------------------------------------
+
         self.ui.pushButton_return.clicked.connect(self.goreturn)
 
         self.show()
-
-    def update_frame(self):
-        # a = ce.WriteData('V', 2.2, 1)
-        # print(a)
-        # 调用定时器更摄像头
-        url = 'rtsp://admin:a12345678@169.254.18.238:554/h264/ch1/sub/av_stream'
-        self.camera = cv2.VideoCapture(url)
-        self.timer1 = QTimer(self)
-        self.c = 0
-        self.timer1.timeout.connect(self.update_img)
-        self.timer1.start()
-
-    def update_img(self):
-        # 摄像头更新实现函
-        ret, frame = self.camera.read()  # 读取摄像头帧
-        # a = ce.ReadData('VD', 56)
-        # print(a)
-        self.c += 1
-        if ret:
-            t1 = time.time()
-            # 转换为RGB格式
-            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            name = 'D:/BaiduNetdiskDownload/2/' + str(self.c) + '.jpg'
-            cv2.imwrite(name, frame)
-            h, w, ch = rgb_frame.shape
-            bytes_per_line = ch * w
-            q_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
-            pixmap = QPixmap.fromImage(q_image)
-            self.image_label.setPixmap(pixmap)
-            print(self.text)
-            if self.c % 8 == 0:
-                # 调用深度学习检测界面
-                yuce(name)
-            t2 = time.time()
-            print(t2 - t1)
 
     # 自定义槽函数，用来在状态栏中显示当前日期时间
     def showtime(self):
@@ -107,8 +70,43 @@ class CameraWindow(QMainWindow):
         datetime = QtCore.QDateTime.currentDateTime()
         self.ui.textBrowser_4.clear()
         # 格式化日期时间
-        self.text = datetime.toString('HH:mm:ss')
-        self.ui.textBrowser_4.append(self.text)
+        text = datetime.toString('HH:mm:ss')
+        self.ui.textBrowser_4.append(text)
+
+    def update_frame(self):
+        url = 'rtsp://admin:a12345678@169.254.18.238:554/h264/ch1/sub/av_stream'
+        # 调用定时器更摄像头
+        self.camera = cv2.VideoCapture(0)
+        self.timer1 = QTimer(self)
+        self.c = 0
+        self.timer1.timeout.connect(self.update_img)
+        self.timer1.start()
+
+    def update_img(self):
+        # 摄像头更新实现函数
+        ret, frame = self.camera.read()  # 读取摄像头帧
+        self.c += 1
+        if ret:
+            t1 = time.time()
+            # 转换为RGB格式
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            self.name = 'D:/BaiduNetdiskDownload/2/' + str(self.c) + '.jpg'
+            cv2.imwrite(self.name, frame)
+            h, w, ch = rgb_frame.shape
+            bytes_per_line = ch * w
+            q_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
+            pixmap = QPixmap.fromImage(q_image)
+            self.image_label.setPixmap(pixmap)
+            if self.c % 8 == 0:
+            # 调用深度学习检测界面
+                crystal_jieguo = yuce(self.name)
+                crystal_jieguo = str(crystal_jieguo)
+                self.ui.textBrowser_2.clear()
+                self.ui.textBrowser_2.append(crystal_jieguo)
+            # self.ui.textBrowser_2.clear()
+            # self.ui.textBrowser_2.append(crystal_jieguo)
+            t2 = time.time()
+            print(t2-t1)
 
     def goreturn(self):
         self.win = InterfaceWindow()
@@ -124,7 +122,8 @@ class CameraWindow(QMainWindow):
         user_now = ''
         cameras = ""
 
-    # 2.拖动
+
+     # 2.拖动
     def mousePressEvent(self, event):
         if event.button() == QtCore.Qt.LeftButton and self.isMaximized() == False:
             self.m_flag = True
@@ -148,6 +147,7 @@ class CameraWindow(QMainWindow):
             self.setWindowState(QtCore.Qt.WindowFullScreen)
 
 
+
 class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -166,7 +166,8 @@ class LoginWindow(QMainWindow):
         self.ui.pushButton.clicked.connect(change_widget2)
         self.ui.pushButton_2.clicked.connect(change_widget4)
 
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+
+        # self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         # 连接按钮的 clicked 信号
         self.ui.pushButton_3.clicked.connect(self.go_to_inter)
@@ -213,10 +214,10 @@ class InterfaceWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow2()
         self.ui.setupUi(self)
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        # self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        self.ui.pushButton_vc.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(0))
-        self.ui.pushButton_decode.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(1))
+        self.ui.pushButton_vc.clicked.connect(lambda:self.ui.stackedWidget.setCurrentIndex(0))
+        self.ui.pushButton_decode.clicked.connect(lambda:self.ui.stackedWidget.setCurrentIndex(1))
         self.ui.pushButton_manage.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(2))
 
         self.ui.pushButton_register.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentIndex(0))
@@ -258,8 +259,6 @@ class InterfaceWindow(QMainWindow):
         self.ui.pushButton.clicked.connect(self.log_out)
         # 连接按钮的 clicked 信号
         self.ui.pushButton_v1.clicked.connect(self.go_to_inter1)
-        # self.ui.pushButton_v1.clicked.connect(self.timer2.stop())
-
         self.ui.pushButton_v2.clicked.connect(self.go_to_inter2)
         self.ui.pushButton_v3.clicked.connect(self.go_to_inter3)
 
@@ -267,7 +266,7 @@ class InterfaceWindow(QMainWindow):
 
     def update_frame(self):
         url = 'rtsp://admin:a12345678@169.254.18.238:554/h264/ch1/sub/av_stream'
-        self.camera = cv2.VideoCapture(url)
+        self.camera = cv2.VideoCapture(0)
         self.timer1 = QTimer(self)
         self.timer1.timeout.connect(self.update_img)
         self.timer1.start()

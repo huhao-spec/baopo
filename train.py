@@ -6,7 +6,7 @@ import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 import torch.optim.lr_scheduler as lr_scheduler
-from model_mobile_net import MobileNetV2 as create_model
+from model_mobile_net import efficientnet_b0 as create_model
 from my_dataset import MyDataSet
 from utils import read_split_data, train_one_epoch, evaluate
 
@@ -109,14 +109,14 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--num_classes', type=int, default=3)
-    parser.add_argument('--epochs', type=int, default=10)
-    parser.add_argument('--batch-size', type=int, default=16)
-    parser.add_argument('--lr', type=float, default=0.0001)
-    parser.add_argument('--lrf', type=float, default=0.0001)
+    parser.add_argument('--epochs', type=int, default=15)
+    parser.add_argument('--batch-size', type=int, default=32)
+    parser.add_argument('--lr', type=float, default=0.01)
+    parser.add_argument('--lrf', type=float, default=0.01)
     # 数据集所在根目录
-    parser.add_argument('--data-path', type=str, default="D:\BaiduNetdiskDownload/1")
+    parser.add_argument('--data-path', type=str, default="D:\BaiduNetdiskDownload/3")
     # /root/autodl-tmp/otherweight/mobilenet_v2-b0353104.pth
-    parser.add_argument('--weights', type=str, default='weights/model-24.pth',
+    parser.add_argument('--weights', type=str, default='',
                         help='initial weights path')
     parser.add_argument('--freeze-layers', type=bool, default=False)
     parser.add_argument('--device', default='cuda:0', help='device id (i.e. 0 or 0,1 or cpu)')

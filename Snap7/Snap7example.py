@@ -76,6 +76,7 @@ if __name__ == '__main__':
         print(a)
         a = c.ReadData('V', 0.0)
         # a = c.ReadData('V', 0.5)读结晶信号。
+        # a = c.ReadData('V', 5.1)视窗与罐内温度相差大。
         print(a)
 
         a = c.WriteData('VB', 0, 2)
@@ -95,6 +96,11 @@ if __name__ == '__main__':
         #  a = c.ReadData('VD', 44)读ph值接受浮点型数据
         #  a = c.ReadData('VD', 52)窗外温度
         #  a = c.ReadData('VD', 56)目标温度
+        # 接近结晶信号：a = c.ReadData('I', 0.1)
+        # 变频器运行信号：a = c.ReadData('I', 0.4)
+        # 变频器故障信号：a = c.ReadData('I', 0.6)
+        # 电磁阀吸合信号：a = c.ReadData('I', 0.7)
+        # 照明信号：a = c.ReadData('I', 0.5)
 
         print(a)
 

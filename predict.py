@@ -5,7 +5,7 @@ import torch
 from PIL import Image
 from torchvision import transforms
 
-from model_mobile_net import MobileNetV2 as create_model
+from model_mobile_net import efficientnet_b0 as create_model
 
 
 def yuce(root):
@@ -19,18 +19,14 @@ def yuce(root):
 
     # load image
     img_path = root
-    assert os.path.exists(img_path), "file: '{}' dose not exist.".format(img_path)
     img = Image.open(img_path)
-
     # [N, C, H, W]
     img = data_transform(img)
-
     # expand batch dimension
     img = torch.unsqueeze(img, dim=0)
 
     # read class_indict
-    json_path = 'icons/class_indices.json'
-    assert os.path.exists(json_path), "file: '{}' dose not exist.".format(json_path)
+    json_path = 'class_indices.json'
     with open(json_path, "r") as f:
         class_indict = json.load(f)
 
@@ -38,7 +34,7 @@ def yuce(root):
     model = create_model(num_classes=3).to(device)
 
     # load model weights
-    model_weight_path = "/weights/model-9.pth"
+    model_weight_path = "D:/undergrate_project/rongyexijing/weights/0.997.pth"
     model.load_state_dict(torch.load(model_weight_path, map_location=device))
     model.eval()
     with torch.no_grad():
@@ -46,5 +42,6 @@ def yuce(root):
         output = torch.squeeze(model(img.to(device))).cpu()
         predict = torch.softmax(output, dim=0)
         predict_cla = torch.argmax(predict).numpy()
-    # print_res = "class: {}".format(class_indict[str(predict_cla)])
-    print(predict_cla)
+    print_res = "class: {}".format(class_indict[str(predict_cla)])
+    print(print_res)
+    return print_res

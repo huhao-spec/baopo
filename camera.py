@@ -18,6 +18,8 @@ class Ui_MainWindow3(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -48,7 +50,8 @@ class Ui_MainWindow3(object):
         self.horizontalLayout.addWidget(self.frame_2)
         self.frame_3 = QtWidgets.QFrame(self.frame)
         self.frame_3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                   "")
+"\n"
+"")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
@@ -69,12 +72,12 @@ class Ui_MainWindow3(object):
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.pushButton = QtWidgets.QPushButton(self.widget_1)
         self.pushButton.setStyleSheet("#pushButton{\n"
-                                      "    border:none;\n"
-                                      "}\n"
-                                      "QPushButton#pushButton:pressed{\n"
-                                      "padding-left:5px;\n"
-                                      "padding-top:5px;\n"
-                                      "}")
+"    border:none;\n"
+"}\n"
+"QPushButton#pushButton:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"}")
         self.pushButton.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/icons/quit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -84,11 +87,11 @@ class Ui_MainWindow3(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.widget_1)
         self.pushButton_2.setStyleSheet("#pushButton_2{\n"
 "    border:none;\n"
-                                        "}\n"
-                                        "QPushButton#pushButton_2:pressed{\n"
-                                        "padding-left:5px;\n"
-                                        "padding-top:5px;\n"
-                                        "}")
+"}\n"
+"QPushButton#pushButton_2:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"}")
         self.pushButton_2.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icons/icons/minus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -97,12 +100,12 @@ class Ui_MainWindow3(object):
         self.horizontalLayout_6.addWidget(self.pushButton_2)
         self.pushButton_3 = QtWidgets.QPushButton(self.widget_1)
         self.pushButton_3.setStyleSheet("#pushButton_3{\n"
-                                        "    border:none;\n"
-                                        "}\n"
-                                        "QPushButton#pushButton_3:pressed{\n"
-                                        "padding-left:5px;\n"
-                                        "padding-top:5px;\n"
-                                        "}")
+"    border:none;\n"
+"}\n"
+"QPushButton#pushButton_3:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"}")
         self.pushButton_3.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/icons/icons/simui-minmax.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -111,12 +114,12 @@ class Ui_MainWindow3(object):
         self.horizontalLayout_6.addWidget(self.pushButton_3)
         self.pushButton_1 = QtWidgets.QPushButton(self.widget_1)
         self.pushButton_1.setStyleSheet("#pushButton_1{\n"
-                                        "    border:none;\n"
-                                        "}\n"
-                                        "QPushButton#pushButton_1:pressed{\n"
-                                        "padding-left:5px;\n"
-                                        "padding-top:5px;\n"
-                                        "}")
+"    border:none;\n"
+"}\n"
+"QPushButton#pushButton_1:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"}")
         self.pushButton_1.setText("")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/icons/icons/close.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -170,20 +173,20 @@ class Ui_MainWindow3(object):
         font.setPointSize(16)
         self.pushButton_wash.setFont(font)
         self.pushButton_wash.setStyleSheet("QPushButton#pushButton_wash{\n"
-                                           "background-color:rgba(2,65,118,255);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
-                                           "QPushButton#pushButton_wash:hover{\n"
-                                           "background-color:rgba(2,65,118,150);\n"
-                                           "color:rgba(255,255,255,200);\n"
-                                           "border-radius:5px;\n"
-                                           "}\n"
-                                           "QPushButton#pushButton_wash:pressed{\n"
-                                           "padding-left:5px;\n"
-                                           "padding-top:5px;\n"
-                                           "background-color:rgba(2,65,118,100);\n"
-                                           "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_wash:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_wash:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_wash.setObjectName("pushButton_wash")
         self.gridLayout.addWidget(self.pushButton_wash, 9, 0, 1, 1)
         self.textBrowser_5 = QtWidgets.QTextBrowser(self.widget)
@@ -229,20 +232,20 @@ class Ui_MainWindow3(object):
         font.setPointSize(16)
         self.pushButton_end.setFont(font)
         self.pushButton_end.setStyleSheet("QPushButton#pushButton_end{\n"
-                                          "background-color:rgba(2,65,118,255);\n"
-                                          "color:rgba(255,255,255,200);\n"
-                                          "border-radius:5px;\n"
-                                          "}\n"
-                                          "QPushButton#pushButton_end:hover{\n"
-                                          "background-color:rgba(2,65,118,150);\n"
-                                          "color:rgba(255,255,255,200);\n"
-                                          "border-radius:5px;\n"
-                                          "}\n"
-                                          "QPushButton#pushButton_end:pressed{\n"
-                                          "padding-left:5px;\n"
-                                          "padding-top:5px;\n"
-                                          "background-color:rgba(2,65,118,100);\n"
-                                          "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_end:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_end:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_end.setObjectName("pushButton_end")
         self.gridLayout.addWidget(self.pushButton_end, 9, 2, 1, 1)
         self.textBrowser_3 = QtWidgets.QTextBrowser(self.widget)
@@ -265,20 +268,20 @@ class Ui_MainWindow3(object):
         font.setPointSize(16)
         self.pushButton_return.setFont(font)
         self.pushButton_return.setStyleSheet("QPushButton#pushButton_return{\n"
-                                             "background-color:rgba(2,65,118,255);\n"
-                                             "color:rgba(255,255,255,200);\n"
-                                             "border-radius:5px;\n"
-                                             "}\n"
-                                             "QPushButton#pushButton_return:hover{\n"
-                                             "background-color:rgba(2,65,118,150);\n"
-                                             "color:rgba(255,255,255,200);\n"
-                                             "border-radius:5px;\n"
-                                             "}\n"
-                                             "QPushButton#pushButton_return:pressed{\n"
-                                             "padding-left:5px;\n"
-                                             "padding-top:5px;\n"
-                                             "background-color:rgba(2,65,118,100);\n"
-                                             "}")
+"background-color:rgba(2,65,118,255);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_return:hover{\n"
+"background-color:rgba(2,65,118,150);\n"
+"color:rgba(255,255,255,200);\n"
+"border-radius:5px;\n"
+"}\n"
+"QPushButton#pushButton_return:pressed{\n"
+"padding-left:5px;\n"
+"padding-top:5px;\n"
+"background-color:rgba(2,65,118,100);\n"
+"}")
         self.pushButton_return.setObjectName("pushButton_return")
         self.gridLayout.addWidget(self.pushButton_return, 10, 0, 1, 3)
         self.verticalLayout.addWidget(self.widget)
@@ -292,8 +295,8 @@ class Ui_MainWindow3(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.pushButton_1.clicked.connect(MainWindow.close)  # type: ignore
-        self.pushButton_2.clicked.connect(MainWindow.showMinimized)  # type: ignore
+        self.pushButton_1.clicked.connect(MainWindow.close) # type: ignore
+        self.pushButton_2.clicked.connect(MainWindow.showMinimized) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -308,3 +311,4 @@ class Ui_MainWindow3(object):
         self.label_6.setText(_translate("MainWindow", "密度："))
         self.pushButton_end.setText(_translate("MainWindow", "结束"))
         self.pushButton_return.setText(_translate("MainWindow", "返回主界面"))
+import resource_rc
