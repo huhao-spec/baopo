@@ -1,6 +1,10 @@
+import json
+from model_mobile_net import efficientnet_b0 as create_model
 import cv2
+import torch
 from PyQt5.QtCore import QTimer
-
+from torchvision import transforms
+from PIL import Image
 from login import *
 from interfaceui import *
 from camera import *
@@ -30,13 +34,6 @@ class CameraWindow(QMainWindow):
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.ui.pushButton.clicked.connect(self.log_out)
         self.ui.pushButton_3.clicked.connect(self.toggle_fullscreen)
-        #模拟输入
-        # 创建1个 QTimer计时器对象
-        timer = QtCore.QTimer(self)
-        # 发射timeout信号，与自定义槽函数关联
-        timer.timeout.connect(self.showtime)
-        # 启动计时器
-        timer.start()
 
         #模拟
 
@@ -63,35 +60,43 @@ class CameraWindow(QMainWindow):
 
         self.show()
 
-    # 自定义槽函数，用来在状态栏中显示当前日期时间
-    def showtime(self):
+        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-        # 获取当前日期时间
-        datetime = QtCore.QDateTime.currentDateTime()
-        self.ui.textBrowser_4.clear()
-        # 格式化日期时间
-        text = datetime.toString('HH:mm:ss')
-        self.ui.textBrowser_4.append(text)
+        # create model
+        self.model = create_model(num_classes=3).to(self.device)
+
+        # load model weights
+        model_weight_path = "D:/undergrate_project/rongyexijing/weights/0.997.pth"
+        self.model.load_state_dict(torch.load(model_weight_path, map_location=self.device))
+        self.model.eval()
 
     def update_frame(self):
-        url = 'rtsp://admin:a12345678@169.254.18.238:554/h264/ch1/sub/av_stream'
+        url = 'rtsp://admin:a12345678@169.254.26.101/h264/ch1/sub/av_stream'
         # 调用定时器更摄像头
-        self.camera = cv2.VideoCapture(0)
+        mp = 'D:/BaiduNetdiskDownload/new_video_test.mp4'
+        self.camera = cv2.VideoCapture(mp)
         self.timer1 = QTimer(self)
         self.c = 0
         self.timer1.timeout.connect(self.update_img)
         self.timer1.start()
 
     def update_img(self):
+        # 获取当前日期时间
+        datetime = QtCore.QDateTime.currentDateTime()
+        self.ui.textBrowser_4.clear()
+        # 格式化日期时间
+        text = datetime.toString('HH:mm:ss')
+        self.ui.textBrowser_4.append(text)
         # 摄像头更新实现函数
         ret, frame = self.camera.read()  # 读取摄像头帧
         self.c += 1
+
         if ret:
             t1 = time.time()
             # 转换为RGB格式
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             self.name = 'D:/BaiduNetdiskDownload/2/' + str(self.c) + '.jpg'
-            cv2.imwrite(self.name, frame)
+            # cv2.imwrite(self.name, frame)
             h, w, ch = rgb_frame.shape
             bytes_per_line = ch * w
             q_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
@@ -99,7 +104,32 @@ class CameraWindow(QMainWindow):
             self.image_label.setPixmap(pixmap)
             if self.c % 8 == 0:
             # 调用深度学习检测界面
-                crystal_jieguo = yuce(self.name)
+
+                with torch.no_grad():
+                    img_path = self.name
+                    img = Image.open(img_path)
+                    data_transform = transforms.Compose(
+                        [transforms.Resize(224),
+                         transforms.CenterCrop(224),
+                         transforms.ToTensor(),
+                         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+                    # [N, C, H, W]
+                    img = data_transform(img)
+                    # expand batch dimension
+                    img = torch.unsqueeze(img, dim=0)
+                    # read class_indict
+                    json_path = 'class_indices.json'
+                    with open(json_path, "r") as f:
+                        class_indict = json.load(f)
+                    # predict class
+
+
+                    output = torch.squeeze(self.model(img.to(self.device))).cpu()
+                    predict = torch.softmax(output, dim=0)
+                    predict_cla = torch.argmax(predict).numpy()
+                print_res = "class: {}".format(class_indict[str(predict_cla)])
+                print(print_res)
+                crystal_jieguo = print_res
                 crystal_jieguo = str(crystal_jieguo)
                 self.ui.textBrowser_2.clear()
                 self.ui.textBrowser_2.append(crystal_jieguo)
@@ -265,8 +295,9 @@ class InterfaceWindow(QMainWindow):
         self.ui.pushButton_3.clicked.connect(self.toggle_fullscreen)
 
     def update_frame(self):
+        mp = 'D:/BaiduNetdiskDownload/new_video.mp4'
         url = 'rtsp://admin:a12345678@169.254.18.238:554/h264/ch1/sub/av_stream'
-        self.camera = cv2.VideoCapture(0)
+        self.camera = cv2.VideoCapture(mp)
         self.timer1 = QTimer(self)
         self.timer1.timeout.connect(self.update_img)
         self.timer1.start()

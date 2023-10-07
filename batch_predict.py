@@ -22,7 +22,7 @@ def main():
     imgs_root = "C:/Users/13014/Desktop/测试"
     # assert os.path.exists(imgs_root), f"file: '{imgs_root}' dose not exist."
     # 读取指定文件夹下所有jpg图像路径
-    img_path_list = [os.path.join(imgs_root, i) for i in os.listdir(imgs_root) if i.endswith(".png")]
+    img_path_list = [os.path.join(imgs_root, i) for i in os.listdir(imgs_root) if i.endswith(".jpg")]
 
     # read class_indict
     json_path = './class_indices.json'
@@ -41,7 +41,7 @@ def main():
 
     # prediction
     model.eval()
-    batch_size = 8  # 每次预测时将多少张图片打包成一个batch
+    batch_size = 1  # 每次预测时将多少张图片打包成一个batch
     with torch.no_grad():
         for ids in range(0, len(img_path_list) // batch_size):
             img_list = []
