@@ -1,10 +1,14 @@
 import json
+
+import numpy as np
+
 from model_mobile_net import efficientnet_b0 as create_model
 import cv2
 import torch
+import datetime
 from PyQt5.QtCore import QTimer
 from torchvision import transforms
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 from login import *
 from interfaceui import *
 from camera import *
@@ -14,14 +18,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtGui import QPixmap, QImage
 from PyQt5.QtWidgets import QApplication, QLabel, QSizePolicy
-
-from predict import yuce
+from Snap7.pySnap7 import Smart200
 
 #pip freeze > requirements.txt
 user_now = ''#当前用户
 cameras = ""#摄像头频道
 crystal =  "" #结晶状态
-temperature = ''#温度
 account = ""#用户复写
 
 class CameraWindow(QMainWindow):
@@ -35,14 +37,21 @@ class CameraWindow(QMainWindow):
         self.ui.pushButton.clicked.connect(self.log_out)
         self.ui.pushButton_3.clicked.connect(self.toggle_fullscreen)
 
+        # 链接PLC
+        # self.c = Smart200('192.168.2.1')
+        # ret = self.c.ConnectPLC()
+        # self.c.WriteData('V', 2.2, 1)
+        # print(ret)
+        #
+        # a = self.c.ReadData('VD', 56)
+        # print(a)
+
         #模拟
 
         temperature = '78.98'
         #----------------------------------------------------------------
 
         self.ui.textBrowser_1.append(cameras)
-
-        self.ui.textBrowser_3.append(temperature)
 
         #模拟
         # 创建 QLabel 控件用于显示图像
@@ -71,43 +80,60 @@ class CameraWindow(QMainWindow):
         self.model.eval()
 
     def update_frame(self):
-        url = 'rtsp://admin:a12345678@169.254.26.101/h264/ch1/sub/av_stream'
+        url = 'rtsp://admin:a12345678@192.168.2.3'
         # 调用定时器更摄像头
-        mp = 'D:/BaiduNetdiskDownload/new_video_test.mp4'
-        self.camera = cv2.VideoCapture(mp)
+        mp = 'D:/BaiduNetdiskDownload/new_video.mp4'
+        self.camera = cv2.VideoCapture(0)
+        fourcc = cv2.VideoWriter.fourcc('m', 'p', '4', 'v')
+        name = 'D:/BaiduNetdiskDownload/2/'+str(datetime.date.today())+'.avi'
+        self.out = cv2.VideoWriter(name, fourcc, 20, (640, 480))
+
         self.timer1 = QTimer(self)
-        self.c = 0
+        self.c_int = 0
         self.timer1.timeout.connect(self.update_img)
         self.timer1.start()
 
     def update_img(self):
-        # 获取当前日期时间
+        # 写入时间
         datetime = QtCore.QDateTime.currentDateTime()
         self.ui.textBrowser_4.clear()
-        # 格式化日期时间
         text = datetime.toString('HH:mm:ss')
         self.ui.textBrowser_4.append(text)
+
+        # 写入温度
+        # a = self.c.ReadData('VD', 56)  # 目标温度
+        # self.ui.textBrowser_3.clear()
+        # temperature = str(a)
+        # print(temperature)
+        # self.ui.textBrowser_3.append(temperature)
+
         # 摄像头更新实现函数
         ret, frame = self.camera.read()  # 读取摄像头帧
-        self.c += 1
+
+        frame = cv2.putText(frame, text, (200, 100), cv2.FONT_HERSHEY_COMPLEX, 2.0, (100, 200, 200), 5)
+        self.out.write(frame)
+        self.c_int += 1
 
         if ret:
             t1 = time.time()
+
             # 转换为RGB格式
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            self.name = 'D:/BaiduNetdiskDownload/2/' + str(self.c) + '.jpg'
+            # self.name = 'D:/BaiduNetdiskDownload/2/' + str(self.c_int) + '.jpg'
             # cv2.imwrite(self.name, frame)
+            # cv2.putText(frame,str(self.c_int),(2000,2000),cv2.FONT_HERSHEY_PLAIN,10,(255,255,255),)
             h, w, ch = rgb_frame.shape
             bytes_per_line = ch * w
             q_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(q_image)
             self.image_label.setPixmap(pixmap)
-            if self.c % 8 == 0:
+            if self.c_int % 8 == 0:
             # 调用深度学习检测界面
 
                 with torch.no_grad():
-                    img_path = self.name
-                    img = Image.open(img_path)
+
+                    # img = Image.open(frame)
+                    img = Image.fromarray(frame.astype('uint8')).convert('RGB')
                     data_transform = transforms.Compose(
                         [transforms.Resize(224),
                          transforms.CenterCrop(224),
@@ -133,17 +159,30 @@ class CameraWindow(QMainWindow):
                 crystal_jieguo = str(crystal_jieguo)
                 self.ui.textBrowser_2.clear()
                 self.ui.textBrowser_2.append(crystal_jieguo)
-            # self.ui.textBrowser_2.clear()
-            # self.ui.textBrowser_2.append(crystal_jieguo)
             t2 = time.time()
             print(t2-t1)
 
+    def cv2AddChineseText(frame, text, position, textColor=(0, 255, 0), textSize=300):
+        img_plg = Image.fromarray(frame)
+        draw = ImageDraw.Draw(img_plg)
+        # 字体的格式
+        fontStyle = ImageFont.truetype(
+            "./../font/simsun.ttc", textSize, encoding="utf-8")
+        # 绘制文本
+        img_array = draw.text(position, text, textColor, font=fontStyle)
+        img = np.asarray(img_array)
+        return img
     def goreturn(self):
         self.win = InterfaceWindow()
         self.timer1.stop()
         self.win.hide()
         self.win.show()
         self.close()
+        self.camera.release()
+        self.out.release()
+
+        # 关闭PLC
+        # self.c.WriteData('V', 2.2, 0)
         cameras = ""
 
     def log_out(self):
@@ -175,7 +214,6 @@ class CameraWindow(QMainWindow):
             self.setWindowState(QtCore.Qt.WindowNoState)
         else:  # 如果当前是普通窗口，则切换为全屏
             self.setWindowState(QtCore.Qt.WindowFullScreen)
-
 
 
 class LoginWindow(QMainWindow):
@@ -296,7 +334,7 @@ class InterfaceWindow(QMainWindow):
 
     def update_frame(self):
         mp = 'D:/BaiduNetdiskDownload/new_video.mp4'
-        url = 'rtsp://admin:a12345678@169.254.18.238:554/h264/ch1/sub/av_stream'
+        url = 'rtsp://admin:a12345678@169.254.18.238/h264/ch1/sub/av_stream'
         self.camera = cv2.VideoCapture(mp)
         self.timer1 = QTimer(self)
         self.timer1.timeout.connect(self.update_img)
@@ -318,6 +356,10 @@ class InterfaceWindow(QMainWindow):
         global cameras
         cameras = "频道1"
         self.login = CameraWindow()
+
+        # 启动plc
+        # self.c.WriteData('V', 2.2, 1)
+
     def go_to_inter2(self):
         self.close()
         global cameras
@@ -332,6 +374,7 @@ class InterfaceWindow(QMainWindow):
     def log_out(self):
         self.close()
         self.login = LoginWindow()
+
         user_now = ''
 
     # 2.拖动
