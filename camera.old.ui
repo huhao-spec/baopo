@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1150</width>
-    <height>800</height>
+    <width>1101</width>
+    <height>745</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_10" stretch="7,3">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <property name="spacing">
      <number>0</number>
     </property>
@@ -38,7 +38,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="6,4">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="6,4">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -55,14 +55,14 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QFrame" name="farme_4">
+        <widget class="QFrame" name="frame_2">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -79,8 +79,8 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QWidget" name="widget" native="true">
-            <layout class="QVBoxLayout" name="verticalLayout_2">
+           <widget class="QWidget" name="widget_2" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_4" stretch="7,3">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -103,6 +103,13 @@
                </property>
               </layout>
              </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_qx">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+              </layout>
+             </item>
             </layout>
            </widget>
           </item>
@@ -110,7 +117,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_5">
+        <widget class="QFrame" name="frame_3">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);
 
@@ -122,7 +129,7 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,3,8">
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0,3,8">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -139,8 +146,8 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QWidget" name="widget_7" native="true">
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <widget class="QWidget" name="widget_1" native="true">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -157,7 +164,7 @@
               <number>0</number>
              </property>
              <item>
-              <spacer name="horizontalSpacer_5">
+              <spacer name="horizontalSpacer">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
@@ -173,7 +180,7 @@
               </spacer>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
                <property name="spacing">
                 <number>0</number>
                </property>
@@ -263,7 +270,23 @@ padding-top:5px;
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_14">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>5</width>
+              <height>30</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
             <property name="font">
              <font>
               <pointsize>30</pointsize>
@@ -281,8 +304,8 @@ padding-top:5px;
            </widget>
           </item>
           <item>
-           <widget class="QWidget" name="widget_8" native="true">
-            <layout class="QGridLayout" name="gridLayout_3">
+           <widget class="QWidget" name="widget" native="true">
+            <layout class="QGridLayout" name="gridLayout">
              <property name="leftMargin">
               <number>9</number>
              </property>
@@ -301,8 +324,139 @@ padding-top:5px;
              <property name="verticalSpacing">
               <number>20</number>
              </property>
-             <item row="3" column="0">
-              <widget class="QLabel" name="label_zhuangtai">
+             <item row="0" column="0" rowspan="2">
+              <widget class="QLabel" name="label_5">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>摄像头序号：</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1" colspan="2">
+              <widget class="QTextBrowser" name="textBrowser_4">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0" rowspan="2">
+              <widget class="QLabel" name="label_7">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>时间：</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0">
+              <widget class="QPushButton" name="pushButton_wash">
+               <property name="minimumSize">
+                <size>
+                 <width>70</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton#pushButton_wash{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_wash:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_wash:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+               </property>
+               <property name="text">
+                <string>冲洗</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1" colspan="2">
+              <widget class="QTextBrowser" name="textBrowser_5">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0" rowspan="2">
+              <widget class="QLabel" name="label_2">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>温度：</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1" colspan="2">
+              <widget class="QTextBrowser" name="textBrowser_1">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" rowspan="2">
+              <widget class="QLabel" name="label_4">
                <property name="font">
                 <font>
                  <pointsize>15</pointsize>
@@ -316,18 +470,84 @@ padding-top:5px;
                </property>
               </widget>
              </item>
-             <item row="5" column="0">
-              <widget class="QLabel" name="label_tem">
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_6">
                <property name="font">
                 <font>
                  <pointsize>15</pointsize>
                 </font>
                </property>
                <property name="text">
-                <string>温度：</string>
+                <string>密度：</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="1">
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>122</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item row="9" column="2">
+              <widget class="QPushButton" name="pushButton_end">
+               <property name="minimumSize">
+                <size>
+                 <width>70</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton#pushButton_end{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_end:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_end:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+               </property>
+               <property name="text">
+                <string>结束</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1" colspan="2">
+              <widget class="QTextBrowser" name="textBrowser_3">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
                </property>
               </widget>
              </item>
@@ -381,203 +601,6 @@ background-color:rgba(2,65,118,100);
                </property>
               </widget>
              </item>
-             <item row="8" column="0">
-              <widget class="QLabel" name="label_time">
-               <property name="font">
-                <font>
-                 <pointsize>15</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>时间：</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="8" column="1" colspan="2">
-              <widget class="QTextBrowser" name="textBrowser_5">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>50</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>15</pointsize>
-                </font>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="1" colspan="2">
-              <widget class="QTextBrowser" name="textBrowser_3">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>50</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>15</pointsize>
-                </font>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1" colspan="2">
-              <widget class="QTextBrowser" name="textBrowser_1">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>50</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>15</pointsize>
-                </font>
-               </property>
-              </widget>
-             </item>
-             <item row="9" column="1">
-              <spacer name="horizontalSpacer_6">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Fixed</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>122</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item row="9" column="0">
-              <widget class="QPushButton" name="pushButton_wash">
-               <property name="minimumSize">
-                <size>
-                 <width>70</width>
-                 <height>60</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>16</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton#pushButton_wash{
-background-color:rgba(2,65,118,255);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_wash:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_wash:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-               </property>
-               <property name="text">
-                <string>冲洗</string>
-               </property>
-              </widget>
-             </item>
-             <item row="6" column="1" colspan="2">
-              <widget class="QTextBrowser" name="textBrowser_4">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>50</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>15</pointsize>
-                </font>
-               </property>
-              </widget>
-             </item>
-             <item row="6" column="0">
-              <widget class="QLabel" name="label_midu">
-               <property name="font">
-                <font>
-                 <pointsize>15</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>密度：</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="label_camera">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>40</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>15</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>摄像头序号：</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="9" column="2">
-              <widget class="QPushButton" name="pushButton_end">
-               <property name="minimumSize">
-                <size>
-                 <width>70</width>
-                 <height>60</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>16</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton#pushButton_end{
-background-color:rgba(2,65,118,255);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_end:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_end:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-               </property>
-               <property name="text">
-                <string>结束</string>
-               </property>
-              </widget>
-             </item>
             </layout>
            </widget>
           </item>
@@ -586,13 +609,6 @@ background-color:rgba(2,65,118,100);
        </item>
       </layout>
      </widget>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_qx">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-     </layout>
     </item>
    </layout>
   </widget>
@@ -608,12 +624,12 @@ background-color:rgba(2,65,118,100);
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1139</x>
-     <y>9</y>
+     <x>1196</x>
+     <y>31</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1307</x>
-     <y>225</y>
+     <x>1359</x>
+     <y>203</y>
     </hint>
    </hints>
   </connection>
@@ -624,12 +640,12 @@ background-color:rgba(2,65,118,100);
    <slot>showMinimized()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1099</x>
-     <y>10</y>
+     <x>1142</x>
+     <y>36</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1250</x>
-     <y>294</y>
+     <x>1370</x>
+     <y>300</y>
     </hint>
    </hints>
   </connection>

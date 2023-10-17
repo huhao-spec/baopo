@@ -29,10 +29,10 @@ def save_img():
         # os.makedirs(folder_name, exist_ok=True)
         # video_name
         # vc = cv2.VideoCapture(video_path+'/'+video_name)
-        vc = cv2.VideoCapture('D:\BaiduNetdiskDownload/3.mp4')
+        vc = cv2.VideoCapture('D:\HAIKANG\iVMS-4200 Site/UserData\Video\RecordFile/20231016/192.168.2.3_8000_1_3419F0BEC5F44FE7BAE535586DC6D6F8_/9.mp4')
         c=0
         rval=vc.isOpened()
-        folder_name = 'D:\BaiduNetdiskDownload/3'
+        folder_name = 'D:\HAIKANG\iVMS-4200 Site/UserData\Video\RecordFile/20231016/192.168.2.3_8000_1_3419F0BEC5F44FE7BAE535586DC6D6F8_/9'
         while rval:
             c = c + 1
             rval, frame = vc.read()
