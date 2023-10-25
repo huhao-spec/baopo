@@ -177,345 +177,19 @@ padding-top:5px;
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,6">
+           <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,8">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <layout class="QGridLayout" name="gridLayout_4" rowstretch="0,0,0,0,0,0,0,0,0" columnstretch="0,1,2">
+             <layout class="QGridLayout" name="gridLayout_4" rowstretch="0,0,0,0,0,0,0,0,0" columnstretch="0,0,0">
               <property name="rightMargin">
                <number>9</number>
               </property>
               <property name="horizontalSpacing">
                <number>6</number>
               </property>
-              <item row="4" column="1">
-               <widget class="QLabel" name="label_3">
-                <property name="font">
-                 <font>
-                  <pointsize>15</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>频道3:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="2">
-               <widget class="QPushButton" name="pushButton_r2">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton#pushButton_r2{
-background-color:rgba(2,65,118,255);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_r2:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_r2:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-                </property>
-                <property name="text">
-                 <string>开始</string>
-                </property>
-               </widget>
-              </item>
-              <item row="8" column="2">
-               <widget class="QPushButton" name="pushButton_run">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>60</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton#pushButton_run{
-background-color:rgb(0, 139, 0);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_run:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_run:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-                </property>
-                <property name="text">
-                 <string>运行</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="2">
-               <widget class="QPushButton" name="pushButton_r1">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton#pushButton_r1{
-background-color:rgba(2,65,118,255);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_r1:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_r1:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-                </property>
-                <property name="text">
-                 <string>开始</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="2">
-               <widget class="QPushButton" name="pushButton_v2">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton#pushButton_v2{
-background-color:rgba(2,65,118,255);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_v2:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_v2:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-                </property>
-                <property name="text">
-                 <string>进入</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLabel" name="label">
-                <property name="font">
-                 <font>
-                  <pointsize>15</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>频道1:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
               <item row="6" column="1">
-               <widget class="QLabel" name="label_6">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>15</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>设置:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="7" column="2">
-               <widget class="QPushButton" name="pushButton_manage">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton#pushButton_manage{
-background-color:rgba(2,65,118,255);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_manage:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_manage:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-                </property>
-                <property name="text">
-                 <string>管理员</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="2">
-               <widget class="QPushButton" name="pushButton_v3">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton#pushButton_v3{
-background-color:rgba(2,65,118,255);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_v3:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_v3:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-                </property>
-                <property name="text">
-                 <string>进入</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="2">
-               <widget class="QPushButton" name="pushButton_v1">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>14</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton#pushButton_v1{
-background-color:rgba(2,65,118,255);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_v1:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_v1:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-                </property>
-                <property name="text">
-                 <string>进入</string>
-                </property>
-               </widget>
-              </item>
-              <item row="8" column="1">
-               <widget class="QLabel" name="label_8">
-                <property name="font">
-                 <font>
-                  <pointsize>15</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>开始：</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QLabel" name="label_2">
-                <property name="font">
-                 <font>
-                  <pointsize>15</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>频道2:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="6" column="2">
                <widget class="QPushButton" name="pushButton_ch_decode">
                 <property name="minimumSize">
                  <size>
@@ -525,7 +199,7 @@ background-color:rgba(2,65,118,100);
                 </property>
                 <property name="font">
                  <font>
-                  <pointsize>14</pointsize>
+                  <pointsize>15</pointsize>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -550,8 +224,8 @@ background-color:rgba(2,65,118,100);
                 </property>
                </widget>
               </item>
-              <item row="5" column="2">
-               <widget class="QPushButton" name="pushButton_r3">
+              <item row="5" column="1">
+               <widget class="QPushButton" name="pushButton_record">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -560,30 +234,250 @@ background-color:rgba(2,65,118,100);
                 </property>
                 <property name="font">
                  <font>
-                  <pointsize>14</pointsize>
+                  <pointsize>15</pointsize>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">QPushButton#pushButton_r3{
+                 <string notr="true">QPushButton#pushButton_record{
 background-color:rgba(2,65,118,255);
 color:rgba(255,255,255,200);
 border-radius:5px;
 }
-QPushButton#pushButton_r3:hover{
+QPushButton#pushButton_record:hover{
 background-color:rgba(2,65,118,150);
 color:rgba(255,255,255,200);
 border-radius:5px;
 }
-QPushButton#pushButton_r3:pressed{
+QPushButton#pushButton_record:pressed{
 padding-left:5px;
 padding-top:5px;
 background-color:rgba(2,65,118,100);
 }</string>
                 </property>
                 <property name="text">
-                 <string>开始</string>
+                 <string>记录</string>
                 </property>
                </widget>
+              </item>
+              <item row="1" column="0">
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="8" column="1">
+               <spacer name="verticalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>10</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="2" column="1">
+               <widget class="QPushButton" name="pushButton_v2">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>15</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton#pushButton_v2{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_v2:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_v2:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+                </property>
+                <property name="text">
+                 <string>105B罐</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QPushButton" name="pushButton_v1">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>15</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton#pushButton_v1{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_v1:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_v1:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+                </property>
+                <property name="text">
+                 <string>105A罐</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <spacer name="verticalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>10</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="3" column="1">
+               <widget class="QPushButton" name="pushButton_v3">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>15</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton#pushButton_v3{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_v3:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_v3:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+                </property>
+                <property name="text">
+                 <string>102罐</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="7" column="1">
+               <widget class="QPushButton" name="pushButton_manage">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>15</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton#pushButton_manage{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_manage:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_manage:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+                </property>
+                <property name="text">
+                 <string>管理员</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <spacer name="verticalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>150</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </item>

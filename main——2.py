@@ -289,7 +289,7 @@ class InterfaceWindow(QMainWindow):
         # 创建 QLabel 控件用于显示图像
         self.image_label = QLabel()
         # 加载图像
-        self.update_frame()
+        self.update_frame_105a()
         # 设置 QLabel 的大小策略为 Expanding
         self.image_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         self.image_label.setScaledContents(True)  # 图片自动拉伸到 QLabel 大小
@@ -320,23 +320,27 @@ class InterfaceWindow(QMainWindow):
 
         self.ui.pushButton_3.clicked.connect(self.toggle_fullscreen)
 
-    def update_frame(self):
+    def update_frame_105a(self):
         mp = 'D:/BaiduNetdiskDownload/new_video.mp4'
         url = 'rtsp://admin:a12345678@169.254.18.238/h264/ch1/sub/av_stream'
         self.camera = cv2.VideoCapture(mp)
         self.timer1 = QTimer(self)
-        self.timer1.timeout.connect(self.update_img)
         self.timer1.start()
+        self.timer1.timeout.connect(self.update_img_105a)
 
-    def update_img(self):
+
+    def update_img_105a(self):
         ret, frame = self.camera.read()  # 读取摄像头帧
         if ret:
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # 转换为RGB格式
+            print(1)
             h, w, ch = rgb_frame.shape
             bytes_per_line = ch * w
             q_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(q_image)
             self.image_label.setPixmap(pixmap)
+            # self.ui.label_v2.setPixmap(pixmap)
+            # self.ui.label_v3.setPixmap(pixmap)
 
     def go_to_inter1(self):
         self.timer1.stop()
