@@ -33,14 +33,14 @@ def read_f(data1, data2, data3, data4):
         nMantissa = 1 + nMantissa / 8388608
 
     value = nSign * nMantissa * (2 ** (nExp - 127))
+    value = str(value)
     return value
 
 
 c = Smart200('192.168.2.1')
 c.ConnectPLC()
-# A=c.WriteData('VB', 7.0, 3) # 自动和远程合并 写0所有的都停 软件开始时候写入
-B=c.WriteData('VB', 8, 1)   # 8代表视频开始结晶  视频识别到结晶时候写入
-# a=c.ReadData('VB', 7)
-b=c.ReadData('VB', 8)
-print( b)
-# print(read_f(900,901,902,903))
+
+# 传入温度
+tem = read_f(56, 57, 58, 59)
+print(tem)
+
