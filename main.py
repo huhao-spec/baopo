@@ -295,8 +295,10 @@ class CameraWindow(QMainWindow):
         self.plotWidget.setLabel("bottom", "时间","s")
         self.plotWidget.setRange(xRange=[0, 60], yRange=[0, 150])
         self.ui.verticalLayout_qx.addWidget(self.plotWidget)
+
         # 创建一个空的数据列表，用于存储动态数据
         self.data = []
+
         # 创建一个曲线对象，用于绘制数据
         self.curve = self.plotWidget.plot(pen=pg.mkPen(color='y', width=2))
 
