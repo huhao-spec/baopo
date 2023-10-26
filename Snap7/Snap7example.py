@@ -7,10 +7,21 @@ if __name__ == '__main__':
     c = Smart200('192.168.2.1')
     ret = c.ConnectPLC()
     print(ret)
-    while ret:
-        """ 
+    if ret:
+        # A = c.WriteData('V', 8.0, 1)
+        # B = c.WriteData('V', 2.2, 1)
+        # d = c.WriteData('V', 5.3, 1)
+        # # 结晶信号：v5.3写1就是开始结晶
+        # e = c.ReadData('V', 5.3)
+        # a = c.ReadData('V', 8.0)
+        # b = c.ReadData('V', 2.2)
+        # o = c.ReadData('Q',0.1)
+        # print(a, b,'e',e,'q0.1',o)
+        # c.WriteData('VD', 600, 123.214)
+        # print()
+        """
         I区读取
-        写入........................................................................................................................................................................................................... 
+        写入...........................................................................................................................................................................................................
         """
         a = c.ReadData('I', 0.0)
         print(a)
@@ -20,6 +31,7 @@ if __name__ == '__main__':
         print(a)
         a = c.ReadData('ID', 0)
         print(a)
+
 
         """ Q区读写 """
         a = c.WriteData('Q', 0.0, 1)
@@ -63,13 +75,13 @@ if __name__ == '__main__':
         a = c.ReadData('MD', 0)
         print(a)
 
-        """ V区读写 
+        """ V区读写
         输入V2.2开始输入，控制开始
         如果把设备输入
         a = c.WriteData('V', 2.2, 1)开始
         a = c.WriteData('V', 2.2, 0)关闭
         读取操作
-        
+
         """
         a = c.WriteData('V', 0.0, 1)
         print(a)
@@ -100,15 +112,25 @@ if __name__ == '__main__':
         # 变频器故障信号：a = c.ReadData('I', 0.6)
         # 电磁阀吸合信号：a = c.ReadData('I', 0.7)
         # 照明信号：a = c.ReadData('I', 0.5)
+        # c.WriteData('v',0.1, 1)
+        # c.WriteData('v',2.2, 1) 自动控制两个都是1的时候自动运行
 
         print(a)
+        A = c.WriteData('VB', 8.0, 1)
+        B = c.WriteData('VB', 2.2, 1)
+        d = c.WriteData('V', 5.3, 1)
+        e = c.ReadData('V', 5.3)
+        a = c.ReadData('V', 8.0)
+        b = c.ReadData('V', 2.2)
+        print("v8.0",a,"e", b,'e',e)
+        c.WriteData('VD', 600, 123.214)
+        print()
 
         # 判断错误代码
         e = a['statue']
         if e == -1:
             print('连接断开')
             c.CloseConnect()
-            break
         elif e == 0:
             # 正常状态无错误
             pass

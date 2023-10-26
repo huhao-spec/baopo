@@ -115,9 +115,9 @@ class Smart200():
                     returnParams['statue'] = self.__Error(True)
                     returnParams['data'] = f['data']
                 elif 'D' in _array:
-                    f = self.__registersD(clientArea, _index[0], 0, dbNum)
-                    returnParams['statue'] = self.__Error(True)
-                    returnParams['data'] = f['data']
+                        f = self.__registersD(clientArea, _index[0], 0, dbNum)
+                        returnParams['statue'] = self.__Error(True)
+                        returnParams['data'] = f['data']
                 else:
                     returnParams['statue'] = self.__Error(False)
                     returnParams['data'] = []
@@ -139,7 +139,7 @@ class Smart200():
         returnParams = dict()
 
         if not self.__isConnect:
-            returnParams['statue'] = self.__Error(False)
+            # returnParams['statue'] = self.__Error(False)
             returnParams['data'] = []
 
         else:

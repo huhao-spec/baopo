@@ -1,5 +1,6 @@
 import datetime
 import json
+import struct
 import sys
 import time
 from model_mobile_net import efficientnet_b0 as create_model
@@ -9,7 +10,7 @@ import pyqtgraph as pg
 import torch
 from PIL import Image
 from torchvision import transforms
-
+from Snap7.pySnap7 import Smart200
 from welcome import *
 from login import *
 from interfaceui import *
@@ -38,7 +39,7 @@ def database_connect():
                 ,user = 'root' 
                 ,passwd='123456'
                 ,port= 3306
-                ,db='main_data'
+                ,db='test_database'
                 ,charset='utf8' 
                 )
         return connect
@@ -47,6 +48,9 @@ class CameraWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
+        self.plc = Smart200('192.168.2.1')
+        self.plc.ConnectPLC()
+        self.plc.WriteData('VB', 7.0, 3)
         self.ui = Ui_MainWindow3()
         self.ui.setupUi(self)
         self.init_plot()
@@ -56,6 +60,8 @@ class CameraWindow(QMainWindow):
         self.timer_database.timeout.connect(self.update_data)
         # 启动定时器
         self.timer_database.start()
+        self.conn = database_connect()
+        self.cursor = self.conn.cursor()
         # 连接到mysql数据库
         
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
@@ -64,18 +70,18 @@ class CameraWindow(QMainWindow):
         self.ui.pushButton_3.clicked.connect(self.toggle_fullscreen)
         crystal = ""
         #----------------------------------------------------------------
-
         self.ui.textBrowser_1.append(cameras)
 
-        # create model
+        """ create model """
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.model = create_model(num_classes=3).to(self.device)
-        # load model weights
         model_weight_path = "D:/undergrate_project/rongyexijing/weights/0.997.pth"
         self.model.load_state_dict(torch.load(model_weight_path, map_location=self.device))
         self.model.eval()
-
-        #模拟
+        json_path = 'class_indices.json'
+        with open(json_path, "r") as f:
+            self.class_indict = json.load(f)
+        """ 界面 """
         # 创建 QLabel 控件用于显示图像
         self.image_label = QLabel()
         self.update_frame()
@@ -95,8 +101,6 @@ class CameraWindow(QMainWindow):
         #------------------------------------------------------------------------------------
 
         self.ui.pushButton_end.clicked.connect(self.goreturn)
-        #self.win = InterfaceWindow()
-
 
         self.show()
 
@@ -132,6 +136,9 @@ class CameraWindow(QMainWindow):
         self.timer2.setInterval(1000)  # 1秒钟更新一次
         self.timer2.timeout.connect(self.updateProgress3)
 
+        # PLC
+        self.plc = Smart200('192.168.2.1')
+
     def update_frame(self):
         url = 'rtsp://admin:a12345678@192.168.2.3'
         # 调用定时器更摄像头
@@ -149,38 +156,40 @@ class CameraWindow(QMainWindow):
     def update_img(self):
         # 写入时间
         datetime = QtCore.QDateTime.currentDateTime()
-        self.ui.textBrowser_4.clear()
+        self.ui.textBrowser_5.clear()
         text = datetime.toString('HH:mm:ss')
-        self.ui.textBrowser_4.append(text)
+        self.ui.textBrowser_5.append(text)
 
-        # 写入温度
-        # a = self.c.ReadData('VD', 56)  # 目标温度
-        # self.ui.textBrowser_3.clear()
-        # temperature = str(a)
-        # print(temperature)
-        # self.ui.textBrowser_3.append(temperature)
+        # 传入温度
+        tem  = self.read_f(56, 57, 58, 59)
+        self.ui.textBrowser_2.clear()
+        self.ui.textBrowser_2.append(tem)
+
+        # 传入密度3
+        midu = self.read_f(48, 49, 50, 51)
+        self.ui.textBrowser_3.clear()
+        self.ui.textBrowser_3.append(midu)
+
+        # 传入ph4
+        ph = self.read_f(44, 45, 46, 47)
+        self.ui.textBrowser_3.clear()
+        self.ui.textBrowser_3.append(ph)
 
         # 摄像头更新实现函数
         ret, frame = self.camera.read()  # 读取摄像头帧
-
         frame = cv2.putText(frame, text, (200, 100), cv2.FONT_HERSHEY_COMPLEX, 2.0, (100, 200, 200), 5)
         self.out.write(frame)
         self.c_int += 1
 
         if ret:
             t1 = time.time()
-
             # 转换为RGB格式
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            # self.name = 'D:/BaiduNetdiskDownload/2/' + str(self.c_int) + '.jpg'
-            # cv2.imwrite(self.name, frame)
-            # cv2.putText(frame,str(self.c_int),(2000,2000),cv2.FONT_HERSHEY_PLAIN,10,(255,255,255),)
             h, w, ch = rgb_frame.shape
             bytes_per_line = ch * w
             q_image = QImage(rgb_frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(q_image)
             self.image_label.setPixmap(pixmap)
-            # if self.c_int % 8 == 0:
             # 调用深度学习检测
             with torch.no_grad():
                 img = Image.fromarray(frame.astype('uint8')).convert('RGB')
@@ -191,26 +200,62 @@ class CameraWindow(QMainWindow):
                      transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
                 # [N, C, H, W]
                 img = data_transform(img)
-                # expand batch dimension
                 img = torch.unsqueeze(img, dim=0)
-                # read class_indict
-                json_path = 'class_indices.json'
-                with open(json_path, "r") as f:
-                    class_indict = json.load(f)
                 # predict class
-
-
                 output = torch.squeeze(self.model(img.to(self.device))).cpu()
                 predict = torch.softmax(output, dim=0)
                 predict_cla = torch.argmax(predict).numpy()
-            print_res = "class: {}".format(class_indict[str(predict_cla)])
+            print_res = "class: {}".format(self.class_indict[str(predict_cla)])
             print(print_res)
+            # if(print_res = kaishi):
+            #     self.plc.WriteData('VB', 8, 1)
             crystal_jieguo = print_res
             crystal_jieguo = str(crystal_jieguo)
             self.ui.textBrowser_2.clear()
             self.ui.textBrowser_2.append(crystal_jieguo)
             t2 = time.time()
+            create_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+            # sql = "INSERT INTO tempurter (main_time, tem, pot_num) VALUES ('%s', %s, 1)" % (create_time, tem)
+            # self.cursor.execute(sql)
+            # self.conn.commit()
             print(t2-t1)
+
+    def read_f(self, data1_int, data2_int, data3_int, data4_int):
+        # 读数
+        data1_ori = self.plc.ReadData('VB', data1_int)
+        data2_ori = self.plc.ReadData('VB', data2_int)
+        data3_ori = self.plc.ReadData('VB', data3_int)
+        data4_ori = self.plc.ReadData('VB', data4_int)
+        print(data1_ori)
+        # 取数
+        data1_data = data1_ori['data']
+        data2_data = data2_ori['data']
+        data3_data = data3_ori['data']
+        data4_data = data4_ori['data']
+        # 变类型
+        data1 = int(''.join(map(str, data1_data)))
+        data2 = int(''.join(map(str, data2_data)))
+        data3 = int(''.join(map(str, data3_data)))
+        data4 = int(''.join(map(str, data4_data)))
+        # 转转
+        data = (data1 << 24) | (data2 << 16) | (data3 << 8) | data4
+
+        if data & 0x80000000 > 0:
+            nSign = -1
+        else:
+            nSign = 1
+
+        nExp = data & 0x7F800000
+        nExp = nExp >> 23
+        nMantissa = data & 0x7FFFFF
+
+        if nMantissa != 0:
+            nMantissa = 1 + nMantissa / 8388608
+
+        value = nSign * nMantissa * (2 ** (nExp - 127))
+        value = str(value)
+        return value
+
     def startCountdown_start(self):
         self.ui.progressBar_start.setValue(0)
         self.timer1.start()
