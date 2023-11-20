@@ -18,6 +18,7 @@ while (1):
     tem = "%.2f" %(random.random() + random.randint(20, 120))
     try:
         sql = "INSERT INTO tempurter (main_time, tem, pot_num) VALUES ('%s', %s, 1)" %(create_time, tem)
+
         cursor.execute(sql)
         db.commit()
 

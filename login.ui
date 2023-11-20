@@ -114,39 +114,11 @@ border-bottom-right-radius:10px;</string>
             <number>0</number>
            </property>
            <item>
-            <widget class="QPushButton" name="pushButton">
-             <property name="font">
-              <font>
-               <pointsize>16</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">#pushButton{
-	border:none;
-}
-#pushButton:focus{
-	color:rgb(186, 186, 186);
-}</string>
-             </property>
-             <property name="text">
-              <string>登录</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="Line" name="line">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="QPushButton" name="pushButton_2">
              <property name="font">
               <font>
-               <pointsize>16</pointsize>
+               <family>Arial</family>
+               <pointsize>20</pointsize>
                <weight>75</weight>
                <bold>true</bold>
               </font>
@@ -160,7 +132,7 @@ border-bottom-right-radius:10px;</string>
 }</string>
              </property>
              <property name="text">
-              <string>管理员</string>
+              <string>登录</string>
              </property>
             </widget>
            </item>
@@ -293,6 +265,12 @@ border-color: rgb(0, 0, 0);</string>
              <height>50</height>
             </rect>
            </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>13</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#pushButton_6{
 background-color:rgba(2,65,118,255);
@@ -312,115 +290,6 @@ background-color:rgba(2,65,118,100);
            </property>
            <property name="text">
             <string>登录</string>
-           </property>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="widget_2" native="true">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>140</y>
-            <width>321</width>
-            <height>301</height>
-           </rect>
-          </property>
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>40</y>
-             <width>281</width>
-             <height>61</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgba(0, 0, 0,0);
-border:1px solid rgba(0,0,0,0);
-border-radius:7px;
-border-color: rgb(0, 0, 0);</string>
-           </property>
-           <property name="placeholderText">
-            <string>账号：</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="lineEdit_2">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>130</y>
-             <width>281</width>
-             <height>61</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgba(0, 0, 0,0);
-border:1px solid rgba(0,0,0,0);
-border-radius:7px;
-border-color: rgb(0, 0, 0);</string>
-           </property>
-           <property name="echoMode">
-            <enum>QLineEdit::Password</enum>
-           </property>
-           <property name="placeholderText">
-            <string>密码：</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="geometry">
-            <rect>
-             <x>50</x>
-             <y>230</y>
-             <width>211</width>
-             <height>51</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton#pushButton_3{
-background-color:rgba(2,65,118,255);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_3:hover{
-background-color:rgba(2,65,118,150);
-color:rgba(255,255,255,200);
-border-radius:5px;
-}
-QPushButton#pushButton_3:pressed{
-padding-left:5px;
-padding-top:5px;
-background-color:rgba(2,65,118,100);
-}</string>
-           </property>
-           <property name="text">
-            <string>登录</string>
-           </property>
-          </widget>
-          <widget class="QCheckBox" name="checkBox">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>200</y>
-             <width>71</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>8</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>记住</string>
            </property>
           </widget>
          </widget>

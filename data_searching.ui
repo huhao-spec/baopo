@@ -1,39 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1266</width>
-    <height>867</height>
+    <width>1258</width>
+    <height>819</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>水相溶液析晶点在线检测系统</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>130</y>
-     <width>351</width>
-     <height>151</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="main_Layout">
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/icons/icons/中国兵器工业集团logo.svg</normaloff>:/icons/icons/中国兵器工业集团logo.svg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(222, 222, 222);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0,1,1,16">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
-     <layout class="QHBoxLayout" name="data_source_Layout">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>25</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>水相溶液析晶点在线检测系统</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0">
       <item>
        <widget class="QLabel" name="data_source_labal">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;数据源:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QComboBox" name="data_source">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <item>
          <property name="text">
           <string>01罐</string>
@@ -56,104 +110,562 @@
         </item>
        </widget>
       </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>250</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="tem_limit_show">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>临界温度设置:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="tem_limit">
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="maximum">
+         <double>160.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="set_pot_lim_tem">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#set_pot_lim_tem{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#set_pot_lim_tem:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#set_pot_lim_tem:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+        </property>
+        <property name="text">
+         <string>临界温度设置</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_10">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
      </layout>
     </item>
     <item>
      <layout class="QHBoxLayout" name="time_Layout">
       <item>
        <widget class="QLabel" name="time_from_labal">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>时间从:</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
       </item>
       <item>
-       <widget class="QDateTimeEdit" name="s_datetime"/>
+       <widget class="QDateTimeEdit" name="s_datetime">
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="to_labal">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>到:</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDateTimeEdit" name="e_datetime"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QTableWidget" name="sql_table_show">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>290</y>
-     <width>631</width>
-     <height>321</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>160</y>
-     <width>221</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QHBoxLayout" name="tem_limited_Layout">
-      <item>
-       <widget class="QLabel" name="tem_limit_show">
-        <property name="text">
-         <string>临界温度设置:</string>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QDoubleSpinBox" name="tem_limit"/>
+       <widget class="QDateTimeEdit" name="e_datetime">
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>150</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Confirm_button">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#Confirm_button{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#Confirm_button:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#Confirm_button:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+        </property>
+        <property name="text">
+         <string>查询</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="print_out">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#print_out{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#print_out:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#print_out:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+        </property>
+        <property name="text">
+         <string>导出数据</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_11">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="tem_limit_update">
-      <property name="text">
-       <string>临界温度设置</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>80</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_tem">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#pushButton_tem{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_tem:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_tem:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+        </property>
+        <property name="text">
+         <string>温度记录</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>80</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_density">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#pushButton_density{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_density:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_density:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+        </property>
+        <property name="text">
+         <string>密度记录</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>80</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_ph">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#pushButton_ph{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_ph:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_ph:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+        </property>
+        <property name="text">
+         <string>PH值记录</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_9">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>80</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_return">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#pushButton_return{
+background-color:rgba(2,65,118,255);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_return:hover{
+background-color:rgba(2,65,118,150);
+color:rgba(255,255,255,200);
+border-radius:5px;
+}
+QPushButton#pushButton_return:pressed{
+padding-left:5px;
+padding-top:5px;
+background-color:rgba(2,65,118,100);
+}</string>
+        </property>
+        <property name="text">
+         <string>返回</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>80</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>620</y>
-     <width>169</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <widget class="QCheckBox" name="tem_limit_on_off">
-      <property name="text">
-       <string>单独查询临界温度以上数据</string>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+      <property name="spacing">
+       <number>0</number>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="Confirm_button">
-      <property name="text">
-       <string>提交</string>
-      </property>
-     </widget>
+      <item>
+       <widget class="QTableWidget" name="sql_table_show">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="tem_limit_on_off">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>单独查询临界温度以上数据</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

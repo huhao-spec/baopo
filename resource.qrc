@@ -1,6 +1,8 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/中国兵器工业集团logo.svg</file>
     <file>icons/simui-minmax.png</file>
+    <file>icons/guan.png</file>
     <file>icons/maximize.png</file>
     <file>icons/quit.png</file>
     <file>icons/two.png</file>
@@ -9,6 +11,8 @@
     <file>icons/minus.png</file>
     <file>icons/close.png</file>
   </qresource>
+  <qresource prefix="新前缀"/>
+  <qresource prefix="新前缀"/>
   <qresource prefix="images">
     <file>images/title.png</file>
     <file>images/back1.png</file>

@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="huhao@" pattern="file[system]:*||file[system]:*/" />
+</component>
